@@ -49,9 +49,9 @@ From **Admin Panel > Spawn Protection** you can:
 ## Multiple Protection Areas
 
 You can create as many named protection areas as you need. Each area is independent and can have different settings. For example, you might create:
-- `spawn` — Adventure mode + entry message
-- `arena` — No effects, just mob killing
-- `shop` — Saturation + regeneration for a comfortable shopping area
+- `spawn`: Adventure mode + entry message
+- `arena`: No effects, just mob killing
+- `shop`: Saturation + regeneration for a comfortable shopping area
 
 ---
 

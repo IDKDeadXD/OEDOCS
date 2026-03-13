@@ -46,31 +46,31 @@ Once you are the server owner, you have access to the Admin Panel.
 Open the **Admin Panel** and go to **Settings**. The Settings menu is organized into the following sections:
 
 **General Settings**
-- **Add-on Settings** — Toggle whether the Community Panel book is given to players upon respawn.
-- **Community Panel Message** — Set the message displayed at the top of the Community Panel.
-- **Money System** — Change the internal name used for the currency scoreboard.
+- **Add-on Settings**: Toggle whether the Community Panel book is given to players upon respawn.
+- **Community Panel Message**: Set the message displayed at the top of the Community Panel.
+- **Money System**: Change the internal name used for the currency scoreboard.
 
 **Player Features**
-- **Homes System** — Set the global homes limit and enable or disable the homes system entirely.
-- **TPA Settings** — Enable or disable the TPA system.
-- **Vanish Settings** — Configure whether a leave message is sent when a staff member vanishes, and set the server type label.
-- **Join Message** — Enable or disable join messages and write a custom message using `<player>` and `<count>` as placeholders.
+- **Homes System**: Set the global homes limit and enable or disable the homes system entirely.
+- **TPA Settings**: Enable or disable the TPA system.
+- **Vanish Settings**: Configure whether a leave message is sent when a staff member vanishes, and set the server type label.
+- **Join Message**: Enable or disable join messages and write a custom message using `<player>` and `<count>` as placeholders.
 
 **Communication**
-- **Chat Configuration** — Change the command prefix (default: `!`) and toggle a content filter.
-- **Chat Ranks** — Enable or disable rank tags appearing in chat.
-- **Emoji Settings** — Configure emoji behavior in chat.
+- **Chat Configuration**: Change the command prefix (default: `!`) and toggle a content filter.
+- **Chat Ranks**: Enable or disable rank tags appearing in chat.
+- **Emoji Settings**: Configure emoji behavior in chat.
 
 **Security & Moderation**
-- **Combat Log System** — Enable combat logging, set combat duration, configure punishments (ban, inventory clear, or both), and set punishment durations.
+- **Combat Log System**: Enable combat logging, set combat duration, configure punishments (ban, inventory clear, or both), and set punishment durations.
 
-**Performance Options** — Placeholder for a future update; no settings currently available here.
+**Performance Options**: Placeholder for a future update; no settings currently available here.
 
 ---
 
 ## Step 4 - Configure Feature Toggles
 
-**Feature Toggles** controls which buttons are visible on the **Community Panel** main menu. It does not enable or disable the underlying systems — it only shows or hides buttons for players.
+**Feature Toggles** controls which buttons are visible on the **Community Panel** main menu. It does not enable or disable the underlying systems; it only shows or hides buttons for players.
 
 1. Open the **Admin Panel**.
 2. Go to **Feature Toggles**.

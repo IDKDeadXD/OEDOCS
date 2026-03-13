@@ -4,7 +4,7 @@ lastUpdated: 2026-03-13T12:00:00Z
 
 # Mob Management
 
-The Mob Settings system lets administrators restrict or ban specific mob types from the server. This is useful for preventing disruptive or overpowered mobs from spawning.
+The Mob Settings system lets administrators restrict or ban specific mob types from the server. Use it to stop mobs that cause problems, whether that is lag, unfair advantages, or just not fitting the server's rules.
 
 ---
 
@@ -20,9 +20,9 @@ The Mob Settings system lets administrators restrict or ban specific mob types f
 
 ## Use Cases
 
-- Preventing hostile mobs from spawning in specific situations
+- Preventing hostile mobs from spawning in certain situations
 - Restricting mobs that cause excessive lag
-- Disabling mobs that are problematic for your server's rules or gameplay style
+- Disabling mobs that conflict with your server's rules or gameplay
 
 ---
 

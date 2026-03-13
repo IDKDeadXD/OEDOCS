@@ -4,7 +4,7 @@ lastUpdated: 2026-03-13T12:00:00Z
 
 # Troubleshooting
 
-This page covers the most common issues with Obsidian Essentials and how to resolve them.
+Common issues with Obsidian Essentials and how to fix them.
 
 ---
 

@@ -112,7 +112,7 @@ These work the same as their `!` equivalents. See the full [Slash Commands](../c
 
 ## Navigating Menus
 
-All menus in Obsidian Essentials use Minecraft's built-in form UI system. Navigation is straightforward:
+All menus in Obsidian Essentials use Minecraft's built-in form UI system:
 
 - **Buttons** - Click or tap a button to open a submenu or trigger an action.
 - **Text fields** - Type into text boxes to enter names, amounts, or messages.
@@ -120,7 +120,7 @@ All menus in Obsidian Essentials use Minecraft's built-in form UI system. Naviga
 - **Back buttons** - Return to the previous menu.
 - **Close / Cancel** - Exit the current menu without making changes.
 
-There is no mouse cursor required on console or mobile - use your normal interaction controls.
+No mouse cursor is needed on console or mobile. Use your normal interaction controls.
 
 ---
 

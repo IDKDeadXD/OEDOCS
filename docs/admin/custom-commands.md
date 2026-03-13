@@ -4,7 +4,7 @@ lastUpdated: 2026-03-13T12:00:00Z
 
 # Custom Commands
 
-The Custom Commands system lets administrators create their own chat commands that execute Minecraft commands when triggered. This is useful for shortcuts, information commands, reward commands, and more - all without any coding.
+The Custom Commands system lets administrators create their own chat commands that run Minecraft commands when triggered. Good for shortcuts, info commands, reward commands, and similar things. No coding needed.
 
 ---
 
@@ -50,4 +50,4 @@ All custom commands appear in the `!help` list alongside built-in commands (for 
 
 - Custom command names must not conflict with built-in commands.
 - The executed command runs with the server's permission level, so any valid Minecraft command can be used.
-- Custom commands are a powerful way to add server-specific features without modifying the add-on.
+- Custom commands let you add server-specific functionality without modifying the add-on itself.

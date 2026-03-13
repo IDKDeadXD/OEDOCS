@@ -4,7 +4,7 @@ lastUpdated: 2026-03-13T12:00:00Z
 
 # Moderation Tools
 
-Obsidian Essentials provides administrators with a set of moderation tools for managing player behavior, including warnings, kicks, bans, and chat controls.
+Obsidian Essentials includes moderation tools for managing player behavior: warnings, kicks, bans, and chat controls.
 
 ---
 

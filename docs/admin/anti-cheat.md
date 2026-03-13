@@ -4,7 +4,7 @@ lastUpdated: 2026-03-13T12:00:00Z
 
 # Anti-Cheat System (Obsidian Guard)
 
-Obsidian Essentials includes a built-in anti-cheat system called **Obsidian Guard**. It automatically monitors players for suspicious behavior and alerts online administrators when a violation is detected.
+Obsidian Essentials includes a built-in anti-cheat system called **Obsidian Guard**. It runs in the background, watching for known cheat patterns, and alerts online administrators when something is flagged.
 
 ---
 
@@ -22,15 +22,15 @@ Obsidian Guard monitors for the following types of cheating:
 
 ## How It Works
 
-The system runs automatically in the background. When a player is detected doing something suspicious:
+The system runs in the background. When a player is flagged:
 
 1. A **violation** is recorded for that player.
 2. **Online admins are alerted** in chat with details about the violation.
 3. The violation is **logged** so it can be reviewed later.
 
-The system also tracks **repeat offenses**. If a player triggers multiple violations in a short time window, this is noted in the alert.
+The system also tracks **repeat offenses**. If a player triggers multiple violations in a short time window, that is noted in the alert.
 
-Obsidian Guard does not automatically punish players - it notifies admins so they can review and decide on appropriate action.
+Obsidian Guard does not automatically punish players. It notifies admins, who can then review and decide what action to take.
 
 ---
 
@@ -39,9 +39,9 @@ Obsidian Guard does not automatically punish players - it notifies admins so the
 When you receive an anti-cheat alert:
 
 1. Review the violation details in chat.
-2. Observe the player in-game (consider using vanish mode with `!vanish` to watch without being noticed).
-3. Use your judgement to determine whether the behavior is genuinely suspicious.
-4. If confirmed, take action using the [Moderation Tools](moderation.md) (warn, kick, or ban).
+2. Observe the player in-game (consider using vanish mode with `!vanish` to watch without being seen).
+3. Use your judgement. Not every flag means the player is cheating.
+4. If you confirm it, take action using the [Moderation Tools](moderation.md) (warn, kick, or ban).
 
 False positives can occasionally occur, especially with lag. Always verify before taking action.
 

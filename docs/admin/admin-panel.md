@@ -4,7 +4,7 @@ lastUpdated: 2026-03-13T12:00:00Z
 
 # Admin Panel Overview
 
-The **Admin Panel** is the central hub for server administrators. It provides access to every management tool in Obsidian Essentials through an in-game menu system - no external tools or apps required.
+The **Admin Panel** is the main menu for server administrators. It gives access to every management tool in Obsidian Essentials through an in-game menu system. No external tools needed.
 
 ---
 

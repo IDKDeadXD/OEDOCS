@@ -6,7 +6,7 @@ lastUpdated: 2026-03-13T12:00:00Z
 
 # Obsidian Essentials
 
-Obsidian Essentials is an add-on for Minecraft Bedrock Edition — containing both a Behavior Pack and Resource Pack — that gives server owners and administrators a complete suite of management tools, all controlled from inside the game through interactive menus and chat commands.
+Obsidian Essentials is an add-on for Minecraft Bedrock Edition (both a Behavior Pack and Resource Pack) that gives server owners and administrators a complete suite of management tools, all controlled from inside the game through interactive menus and chat commands.
 
 No external apps. No config files. Everything is done in-game.
 

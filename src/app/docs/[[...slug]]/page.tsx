@@ -6,7 +6,7 @@ import ToC from '@/components/ToC';
 import NavFooter from '@/components/NavFooter';
 
 interface PageProps {
-  params: { slug?: string[] };
+  params: Promise<{ slug?: string[] }>;
 }
 
 export async function generateStaticParams() {
@@ -15,7 +15,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const slug = params.slug ?? ['introduction'];
+  const { slug: slugParam } = await params;
+  const slug = slugParam ?? ['introduction'];
   const doc = await getDocBySlug(slug);
   if (!doc) return {};
   return {
@@ -25,7 +26,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function DocPage({ params }: PageProps) {
-  const slug = params.slug ?? ['introduction'];
+  const { slug: slugParam } = await params;
+  const slug = slugParam ?? ['introduction'];
   const doc = await getDocBySlug(slug);
   if (!doc) notFound();
 

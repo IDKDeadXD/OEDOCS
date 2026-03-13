@@ -4,7 +4,7 @@ lastUpdated: 2026-03-13T12:00:00Z
 
 # Ranks & Permissions
 
-Obsidian Essentials includes a full rank and permission system. Ranks control what players can do - from how many homes they can set, to whether they can use admin commands. This page explains how to manage ranks and assign them to players.
+Obsidian Essentials includes a rank and permission system. Ranks control what players can do, from how many homes they can set to whether they can use admin commands. This page explains how to manage ranks and assign them to players.
 
 ---
 

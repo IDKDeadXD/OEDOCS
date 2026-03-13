@@ -4,7 +4,7 @@ lastUpdated: 2026-03-13T12:00:00Z
 
 # Server Settings
 
-The Settings menu in the Admin Panel contains general server-wide configuration options for Obsidian Essentials.
+The Settings menu in the Admin Panel is where you configure server-wide options for Obsidian Essentials.
 
 ---
 
@@ -88,4 +88,4 @@ Set your server rules from **Admin Panel > Rules**. Players can view the rules f
 
 ## Sidebar
 
-The **Sidebar** option lets admins configure a custom scoreboard sidebar that is displayed to all players. This can show any information you want visible at all times.
+The **Sidebar** option lets admins set up a custom scoreboard sidebar shown to all players. You can put whatever information you want there.
