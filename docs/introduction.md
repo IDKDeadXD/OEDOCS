@@ -43,7 +43,7 @@ Everything in Obsidian Essentials is accessed through two in-game book items:
 Import the `.mcaddon` file and activate both the Behavior Pack and Resource Pack on your world. See the [Installation guide](/docs/getting-started/installation).
 
 **2. Claim the owner role**
-As an OP, run `/scriptevent realm:setup` in chat to designate yourself as the server owner.
+As an OP, run `/scriptevent realm:owner` in chat to designate yourself as the server owner.
 
 **3. Open the Admin Panel**
 Type `!adminpanel` to get the Admin Panel book and begin configuring your server.

@@ -17,7 +17,7 @@ The first thing you must do is designate yourself as the **server owner**. This 
 2. Join the world and open chat.
 3. Run the following command exactly as written:
    ```
-   /scriptevent realm:setup
+   /scriptevent realm:owner
    ```
 4. You will receive a confirmation message that you are now set as the server owner.
 
