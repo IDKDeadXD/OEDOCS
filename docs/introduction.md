@@ -22,7 +22,6 @@ No external apps. No config files. Everything is done in-game.
 | **Ranks & Permissions** | Granular rank system with configurable permissions for every feature - homes, kits, warps, commands, and more. |
 | **Moderation Tools** | Warn, kick, and ban players with full logging. Chat lock, report system, and action history. |
 | **Kits & Codes** | Create item kits with cooldowns and rank-based access. Distribute redemption codes for events and rewards. |
-| **Anti-Cheat** | Automatic detection of CPS abuse, fall damage bypass, and flying - with admin alerts and violation logging. |
 | **Warps & Floating Text** | Public warps, admin-only warps, and custom holograms placeable anywhere in the world. |
 
 ---

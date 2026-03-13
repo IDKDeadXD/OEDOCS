@@ -1,4 +1,5 @@
 ---
+title: "Troubleshooting"
 lastUpdated: 2026-03-13T12:00:00Z
 ---
 
@@ -106,17 +107,6 @@ This only needs to be done once. Only the person who should be the permanent ser
 **Cause:** The staff rank does not have the AFK kick bypass permission.
 
 **Solution:** In **Admin Panel > Ranks Editor**, find the staff rank and enable `afk.kickBypass` for that rank.
-
----
-
-## Anti-Cheat Is Flagging Legitimate Players
-
-**Cause:** Detection thresholds may be set too sensitively, or lag is causing false positives.
-
-**Solution:**
-1. Open **Admin Panel > Settings** (or Anti-Cheat Settings).
-2. Adjust the detection thresholds to be less sensitive.
-3. Always verify alerts manually before taking action against a player.
 
 ---
 

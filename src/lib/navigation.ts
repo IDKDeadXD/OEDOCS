@@ -49,7 +49,6 @@ export const navigation: NavSection[] = [
       { title: 'Admin Panel', href: '/docs/admin/admin-panel' },
       { title: 'Ranks & Permissions', href: '/docs/admin/ranks-and-permissions' },
       { title: 'Moderation', href: '/docs/admin/moderation' },
-      { title: 'Anti-Cheat', href: '/docs/admin/anti-cheat' },
       { title: 'Item Banning', href: '/docs/admin/item-banning' },
       { title: 'Mob Management', href: '/docs/admin/mob-management' },
       { title: 'Custom Commands', href: '/docs/admin/custom-commands' },
