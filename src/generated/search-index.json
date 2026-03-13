@@ -1,6 +1,6 @@
 [
   {
-    "title": "admin-panel",
+    "title": "Admin Panel Overview",
     "description": "",
     "href": "/docs/admin/admin-panel",
     "headings": [
@@ -11,10 +11,10 @@
       "Admin Mode Toggle",
       "Community Panel (Player Menu)"
     ],
-    "content": "Admin Panel Overview The Admin Panel is the central hub for server administrators. It provides access to every management tool in Obsidian Essentials through an in-game menu system - no external tools or apps required. -- Opening the Admin Panel Type in chat: or the alias: A book item called Admin Panel will appear in your inventory. Hold it and right-click (or use it on mobile/console) to open the main admin menu. You must have admin permissions or higher to access the Admin Panel. -- Admin Panel Menu Options The Admin Panel contains the following options: Button Description Public Warps Create and manage warp points available to all players Admin Warps Create and manage admin-only warp points Chat Announcements Send formatted announcements to all players Ban Ban and unban players Players View and manage individual players Lag Zapper Remove dropped items and entities to improve performance Reports View player-submitted reports Logs View a history of admin actions Land Claims View and "
+    "content": "Admin Panel Overview The Admin Panel is the main menu for server administrators. It gives access to every management tool in Obsidian Essentials through an in-game menu system. No external tools needed. -- Opening the Admin Panel Type in chat: or the alias: A book item called Admin Panel will appear in your inventory. Hold it and right-click (or use it on mobile/console) to open the main admin menu. You must have admin permissions or higher to access the Admin Panel. -- Admin Panel Menu Options The Admin Panel contains the following options: Button Description Public Warps Create and manage warp points available to all players Admin Warps Create and manage admin-only warp points Chat Announcements Send formatted announcements to all players Ban Ban and unban players Players View and manage individual players Lag Zapper Remove dropped items and entities to improve performance Reports View player-submitted reports Logs View a history of admin actions Land Claims View and manage all playe"
   },
   {
-    "title": "anti-cheat",
+    "title": "Anti-Cheat System (Obsidian Guard)",
     "description": "",
     "href": "/docs/admin/anti-cheat",
     "headings": [
@@ -26,10 +26,10 @@
       "Admin: Configuring the Anti-Cheat",
       "Notes"
     ],
-    "content": "Anti-Cheat System (Obsidian Guard) Obsidian Essentials includes a built-in anti-cheat system called Obsidian Guard. It automatically monitors players for suspicious behavior and alerts online administrators when a violation is detected. -- What It Detects Obsidian Guard monitors for the following types of cheating: Detection What It Catches CPS Monitoring Unusually high click-per-second rates (auto-clickers) Fall Damage Bypass Players taking no damage from large falls Flying Detection Players moving through the air without being in a gamemode that allows flight -- How It Works The system runs automatically in the background. When a player is detected doing something suspicious: 1. A violation is recorded for that player. 2. Online admins are alerted in chat with details about the violation. 3. The violation is logged so it can be reviewed later. The system also tracks repeat offenses. If a player triggers multiple violations in a short time window, this is noted in the alert. Obsidian "
+    "content": "Anti-Cheat System (Obsidian Guard) Obsidian Essentials includes a built-in anti-cheat system called Obsidian Guard. It runs in the background, watching for known cheat patterns, and alerts online administrators when something is flagged. -- What It Detects Obsidian Guard monitors for the following types of cheating: Detection What It Catches CPS Monitoring Unusually high click-per-second rates (auto-clickers) Fall Damage Bypass Players taking no damage from large falls Flying Detection Players moving through the air without being in a gamemode that allows flight -- How It Works The system runs in the background. When a player is flagged: 1. A violation is recorded for that player. 2. Online admins are alerted in chat with details about the violation. 3. The violation is logged so it can be reviewed later. The system also tracks repeat offenses. If a player triggers multiple violations in a short time window, that is noted in the alert. Obsidian Guard does not automatically punish playe"
   },
   {
-    "title": "custom-commands",
+    "title": "Custom Commands",
     "description": "",
     "href": "/docs/admin/custom-commands",
     "headings": [
@@ -40,10 +40,10 @@
       "Editing or Deleting Custom Commands",
       "Notes"
     ],
-    "content": "Custom Commands The Custom Commands system lets administrators create their own chat commands that execute Minecraft commands when triggered. This is useful for shortcuts, information commands, reward commands, and more - all without any coding. -- Creating a Custom Command 1. Open the Admin Panel (). 2. Go to Custom Commands. 3. Select the option to create a new command. 4. Fill in the following: Command Name - The word players type after the prefix Description - A short explanation of what the command does Command to Execute - The Minecraft command that runs when the command is used Command Type - Whether it is a player command or an admin command 5. Save the command. The command is immediately available in chat once saved. -- Player vs Admin Commands Player commands are accessible to all players (subject to their rank's allowed command list). Admin commands are only accessible to players with admin permissions. -- Viewing Custom Commands All custom commands appear in the list alongs"
+    "content": "Custom Commands The Custom Commands system lets administrators create their own chat commands that run Minecraft commands when triggered. Good for shortcuts, info commands, reward commands, and similar things. No coding needed. -- Creating a Custom Command 1. Open the Admin Panel (). 2. Go to Custom Commands. 3. Select the option to create a new command. 4. Fill in the following: Command Name - The word players type after the prefix Description - A short explanation of what the command does Command to Execute - The Minecraft command that runs when the command is used Command Type - Whether it is a player command or an admin command 5. Save the command. The command is immediately available in chat once saved. -- Player vs Admin Commands Player commands are accessible to all players (subject to their rank's allowed command list). Admin commands are only accessible to players with admin permissions. -- Viewing Custom Commands All custom commands appear in the list alongside built-in comma"
   },
   {
-    "title": "item-banning",
+    "title": "Item Banning",
     "description": "",
     "href": "/docs/admin/item-banning",
     "headings": [
@@ -56,7 +56,7 @@
     "content": "Item Banning The Item Banning system allows administrators to prevent specific items from existing in player inventories. When a banned item is detected, it is automatically removed. The check runs once per second. -- Managing Banned Items 1. Open the Admin Panel (). 2. Go to Item Banning. 3. From here you can: View the current list of banned items Add items to the ban list Remove items from the ban list -- How It Works The system scans all online player inventories every second. If a player is found carrying a banned item, it is removed from their inventory automatically. The player may receive a notification. -- Use Cases Preventing players from obtaining admin-only items Removing overpowered or exploitable items from circulation Enforcing server-specific item restrictions -- Notes Players with the tag are exempt from item banning by default. Regular players have banned items removed automatically without exception. This system runs continuously in the background while the server is "
   },
   {
-    "title": "kits-management",
+    "title": "Kit Management",
     "description": "",
     "href": "/docs/admin/kits-management",
     "headings": [
@@ -70,7 +70,7 @@
     "content": "Kit Management Administrators create and manage item kits that players can claim in-game. Kits are configured through both chat commands and the Admin Panel. -- Creating a Kit 1. Fill your inventory with the exact items you want the kit to contain. 2. Type in chat: Example: 3. Your entire current inventory is saved as that kit. Make sure your inventory contains only the items intended for the kit before saving. -- Configuring a Kit After creating a kit, configure it through the Admin Panel: 1. Open the Admin Panel (). 2. Go to Kits Config. 3. Select the kit you want to configure. 4. Set the following options: Cooldown - How long players must wait between claims Accessible Ranks - Which ranks can claim this kit -- Deleting a Kit 1. Open the Admin Panel. 2. Go to Kits Config. 3. Select the kit. 4. Choose the delete option. -- Kit Access by Rank Kit access is controlled per rank through Admin Panel > Ranks Editor: Set to a list of kit names the rank can access. Use to grant access to all "
   },
   {
-    "title": "lag-zapper",
+    "title": "Lag Zapper",
     "description": "",
     "href": "/docs/admin/lag-zapper",
     "headings": [
@@ -84,7 +84,7 @@
     "content": "Lag Zapper The Lag Zapper automatically removes all dropped items from the Overworld on a configurable interval to reduce entity lag. It can be enabled for continuous automatic cleanup or left disabled for manual use only. -- Configuring the Lag Zapper 1. Open the Admin Panel (). 2. Go to Lag Zapper. 3. Set the Ground Item Clear Interval (e.g., , , ). 4. Toggle Enabled on or off. 5. Save. -- Automatic Mode When enabled, the Lag Zapper runs on the interval you configured. Before each cleanup: A warning message is broadcast to all players: \"Clearing ground items in 10 seconds...\" A 3-2-1 countdown is shown in the final seconds. All dropped items in the Overworld are then removed. The 10-second warning gives players time to pick up any items they care about. -- What Gets Removed Only dropped item entities in the Overworld are removed. Mobs, armor stands, and items in other dimensions (Nether, End) are not affected. -- When to Use It Set a regular interval (e.g., every 5 minutes) to keep t"
   },
   {
-    "title": "mob-management",
+    "title": "Mob Management",
     "description": "",
     "href": "/docs/admin/mob-management",
     "headings": [
@@ -93,10 +93,10 @@
       "Use Cases",
       "Notes"
     ],
-    "content": "Mob Management The Mob Settings system lets administrators restrict or ban specific mob types from the server. This is useful for preventing disruptive or overpowered mobs from spawning. -- Managing Mob Restrictions 1. Open the Admin Panel (). 2. Go to Mob Settings. 3. From here you can: Browse mob categories Enable or disable restrictions for specific mob types -- Use Cases Preventing hostile mobs from spawning in specific situations Restricting mobs that cause excessive lag Disabling mobs that are problematic for your server's rules or gameplay style -- Notes Mob restrictions apply server-wide. Changes take effect immediately after saving."
+    "content": "Mob Management The Mob Settings system lets administrators restrict or ban specific mob types from the server. Use it to stop mobs that cause problems, whether that is lag, unfair advantages, or just not fitting the server's rules. -- Managing Mob Restrictions 1. Open the Admin Panel (). 2. Go to Mob Settings. 3. From here you can: Browse mob categories Enable or disable restrictions for specific mob types -- Use Cases Preventing hostile mobs from spawning in certain situations Restricting mobs that cause excessive lag Disabling mobs that conflict with your server's rules or gameplay -- Notes Mob restrictions apply server-wide. Changes take effect immediately after saving."
   },
   {
-    "title": "moderation",
+    "title": "Moderation Tools",
     "description": "",
     "href": "/docs/admin/moderation",
     "headings": [
@@ -114,10 +114,10 @@
       "Player Reports",
       "Moderator Permissions (Admin)"
     ],
-    "content": "Moderation Tools Obsidian Essentials provides administrators with a set of moderation tools for managing player behavior, including warnings, kicks, bans, and chat controls. -- Warning a Player Warnings are formal notices issued to players for breaking rules. They are recorded with a timestamp and reason so you can track repeat offenders. Example: The player will receive the warning notification in-game. The warning is logged and visible to all admins. Viewing a Player's Warnings 1. Open the Admin Panel (). 2. Go to Players. 3. Select the player. 4. Their warning history will be visible, including dates and reasons. -- Kicking a Player Kicking removes a player from the server immediately. They can rejoin afterwards. Example: The player will see the kick reason when removed. The kick is logged. -- Banning a Player The ban system blocks a player from rejoining the server. Banning via the Admin Panel 1. Open the Admin Panel (). 2. Go to Ban. 3. Select Ban Player. 4. Enter the player's nam"
+    "content": "Moderation Tools Obsidian Essentials includes moderation tools for managing player behavior: warnings, kicks, bans, and chat controls. -- Warning a Player Warnings are formal notices issued to players for breaking rules. They are recorded with a timestamp and reason so you can track repeat offenders. Example: The player will receive the warning notification in-game. The warning is logged and visible to all admins. Viewing a Player's Warnings 1. Open the Admin Panel (). 2. Go to Players. 3. Select the player. 4. Their warning history will be visible, including dates and reasons. -- Kicking a Player Kicking removes a player from the server immediately. They can rejoin afterwards. Example: The player will see the kick reason when removed. The kick is logged. -- Banning a Player The ban system blocks a player from rejoining the server. Banning via the Admin Panel 1. Open the Admin Panel (). 2. Go to Ban. 3. Select Ban Player. 4. Enter the player's name and reason. 5. Confirm the ban. Unban"
   },
   {
-    "title": "ranks-and-permissions",
+    "title": "Ranks & Permissions",
     "description": "",
     "href": "/docs/admin/ranks-and-permissions",
     "headings": [
@@ -139,10 +139,10 @@
       "Removing a Rank from a Player",
       "Notes"
     ],
-    "content": "Ranks & Permissions Obsidian Essentials includes a full rank and permission system. Ranks control what players can do - from how many homes they can set, to whether they can use admin commands. This page explains how to manage ranks and assign them to players. -- Default Ranks The add-on comes with several pre-configured ranks: Rank Description Default All players start here. Basic access to player features. Cosmetic Slightly enhanced player with access to color codes in chat. VIP Enhanced player with more homes, kit access, warp access, and shop discounts. VIP+ Further enhanced player with even more homes and extended AFK bypass. Helper Staff rank with some moderation capabilities. Moderator Full moderation access including kick, ban, and warnings. Admin Full access to all admin commands and the Admin Panel. Owner All permissions. Set only once via . -- Assigning a Rank to a Player 1. Open the Admin Panel (). 2. Go to Players. 3. Select the player you want to rank. 4. Navigate to thei"
+    "content": "Ranks & Permissions Obsidian Essentials includes a rank and permission system. Ranks control what players can do, from how many homes they can set to whether they can use admin commands. This page explains how to manage ranks and assign them to players. -- Default Ranks The add-on comes with several pre-configured ranks: Rank Description Default All players start here. Basic access to player features. Cosmetic Slightly enhanced player with access to color codes in chat. VIP Enhanced player with more homes, kit access, warp access, and shop discounts. VIP+ Further enhanced player with even more homes and extended AFK bypass. Helper Staff rank with some moderation capabilities. Moderator Full moderation access including kick, ban, and warnings. Admin Full access to all admin commands and the Admin Panel. Owner All permissions. Set only once via . -- Assigning a Rank to a Player 1. Open the Admin Panel (). 2. Go to Players. 3. Select the player you want to rank. 4. Navigate to their rank "
   },
   {
-    "title": "server-settings",
+    "title": "Server Settings",
     "description": "",
     "href": "/docs/admin/server-settings",
     "headings": [
@@ -159,10 +159,10 @@
       "Server Rules",
       "Sidebar"
     ],
-    "content": "Server Settings The Settings menu in the Admin Panel contains general server-wide configuration options for Obsidian Essentials. -- Accessing Settings 1. Open the Admin Panel (). 2. Select Settings. -- Available Settings Join Messages Setting What It Controls Join Message Enabled Whether a message is shown to all players when someone joins Join Message The text of the join message. Use for the player's name and for the current player count Example join message: -- Community Panel Setting What It Controls Spawn With Book Automatically gives players the Community Panel book when they respawn -- Chat Setting What It Controls Chat Prefix The character used before all commands (default: ) Chat Ranks Enabled Whether rank tags are shown next to player names in chat Ranks in Nameplates Whether rank tags appear above players' heads -- Economy Setting What It Controls Money System Name The internal name of the currency scoreboard Kill/Death Money Drop Whether money is dropped when a player dies "
+    "content": "Server Settings The Settings menu in the Admin Panel is where you configure server-wide options for Obsidian Essentials. -- Accessing Settings 1. Open the Admin Panel (). 2. Select Settings. -- Available Settings Join Messages Setting What It Controls Join Message Enabled Whether a message is shown to all players when someone joins Join Message The text of the join message. Use for the player's name and for the current player count Example join message: -- Community Panel Setting What It Controls Spawn With Book Automatically gives players the Community Panel book when they respawn -- Chat Setting What It Controls Chat Prefix The character used before all commands (default: ) Chat Ranks Enabled Whether rank tags are shown next to player names in chat Ranks in Nameplates Whether rank tags appear above players' heads -- Economy Setting What It Controls Money System Name The internal name of the currency scoreboard Kill/Death Money Drop Whether money is dropped when a player dies Death Dr"
   },
   {
-    "title": "spawn-protection",
+    "title": "Spawn Protection",
     "description": "",
     "href": "/docs/admin/spawn-protection",
     "headings": [
@@ -176,7 +176,7 @@
     "content": "Spawn Protection Spawn Protection lets administrators define named circular protection zones anywhere in the world. Each zone prevents players from building or breaking within its radius, with configurable per-area behavior. -- Creating a Protection Area 1. Go to the location you want to protect (or position yourself near it). 2. Open the Admin Panel (). 3. Go to Spawn Protection. 4. Select the option to create a new area. 5. Enter a name for the area (e.g., , , ). 6. Set a radius (5–200 blocks). 7. Choose whether to use your current position or the world spawn point as the center. 8. Choose whether to enable the area immediately. -- Per-Area Settings Each protection area has its own set of toggles: Setting Default What It Does Send Entry/Exit Messages On Tells players when they enter or leave the protected area Set Adventure Mode On Switches players to Adventure mode inside the area, preventing block breaking/placing Admin Bypass On Admins are not affected by the protection effects Gi"
   },
   {
-    "title": "vanish",
+    "title": "Vanish Mode",
     "description": "",
     "href": "/docs/admin/vanish",
     "headings": [
@@ -189,7 +189,7 @@
     "content": "Vanish Mode Vanish mode allows administrators to become invisible to regular players. This is useful for monitoring player behavior, investigating reports, or moving around the server without being noticed. -- Toggling Vanish To enable or disable vanish mode: or the alias: Running the command again returns you to your normal state. -- How It Works When vanish is activated: You are switched to Spectator mode, making you invisible to other players. Your original game mode is remembered and restored when you toggle vanish off. Depending on server settings, a fake \"leave\" message may be sent to players when you vanish. When vanish is deactivated: You are returned to your previous game mode. Depending on server settings, a fake \"join\" message may be sent to players when you return. -- Admin: Vanish Settings Vanish behavior can be configured in Admin Panel > Settings: Setting What It Controls Send Leave Message on Vanish Whether a fake \"player left\" message is shown when vanishing Server Nam"
   },
   {
-    "title": "warps-management",
+    "title": "Warp Management",
     "description": "",
     "href": "/docs/admin/warps-management",
     "headings": [
@@ -207,7 +207,7 @@
     "content": "Warp Management Obsidian Essentials supports two types of warps: Public Warps accessible to all players, and Admin Warps accessible only to administrators. -- Public Warps Public warps are teleport destinations that any player can access through the Community Panel. Creating a Public Warp 1. Go to the location where you want to place the warp. 2. Open the Admin Panel (). 3. Go to Public Warps. 4. Select the option to create a new warp. 5. Enter a name for the warp. 6. The warp is saved at your current location. Managing Public Warps From Admin Panel > Public Warps you can: View all existing public warps Edit warp names or locations Delete warps Player Access Players access public warps through the Community Panel: 1. Type to open the Community Panel. 2. Select Warps. 3. Choose a warp from the list. Access to specific warps can be restricted per rank through Admin Panel > Ranks Editor using the permission. -- Admin Warps Admin Warps are private teleport points only visible and accessibl"
   },
   {
-    "title": "admin-commands",
+    "title": "Admin Commands",
     "description": "",
     "href": "/docs/commands/admin-commands",
     "headings": [
@@ -228,7 +228,7 @@
     "content": "Admin Commands These commands are available to players with admin permissions or higher. They are entered in chat using the prefix (or your server's configured prefix). Players without admin permissions will not be able to use these commands. -- Panel & Help Command Aliases Description Displays the list of admin commands Gives you the Admin Panel book Toggles admin mode (saves your inventory, switches to creative) -- Player Management Command Description Kicks a player from the server Issues a formal warning to a player (logged) Sends a message to all players on the server Runs a Minecraft command through the add-on Examples: -- Vanish Command Aliases Description Toggles vanish mode (makes you invisible to players) -- Economy Money management is handled through the Admin Panel > Players menu. Select a player and adjust their balance from there. -- Redemption Codes Command Description Creates a new redemption code Deletes an existing redemption code Lists all active redemption codes Exa"
   },
   {
-    "title": "player-commands",
+    "title": "Player Commands",
     "description": "",
     "href": "/docs/commands/player-commands",
     "headings": [
@@ -246,7 +246,7 @@
     "content": "Player Commands These commands are available to all players, subject to rank restrictions configured by the server administrator. All commands use the prefix by default (your server may use a different prefix - check with your admin). -- General Command Aliases Description Displays a list of all commands available to you Gives you the Community Panel book - Shows add-on and server information - Displays the current add-on version -- Economy Command Aliases Description Shows your current money balance - Transfers money to another player Converts money into a physical money item - Sells items from your hand - Sells all applicable items in your inventory Examples: -- Homes Command Description Saves your current location as a home Teleports you to a saved home (with countdown) Deletes a saved home Lists all of your saved homes Examples: -- Teleportation Command Description Sends a teleport request to another player Accepts an incoming teleport request Denies an incoming teleport request Ex"
   },
   {
-    "title": "slash-commands",
+    "title": "Slash Commands",
     "description": "",
     "href": "/docs/commands/slash-commands",
     "headings": [
@@ -258,7 +258,7 @@
     "content": "Slash Commands In addition to prefix chat commands, Obsidian Essentials registers native Minecraft slash commands using the namespace. These appear in Minecraft's autocomplete when you type . -- Player Commands Available to all players (Normal permission level): Slash Command Description Shows available player commands Gives the Community Panel book Shows add-on information Shows the current add-on version Checks your current balance Pays another player Sends a teleport request to a player Accepts a pending teleport request Denies a pending teleport request Marks you as AFK Teleports to a saved home Saves your current location as a home Deletes a saved home Lists all your saved homes Claims the chunk you are standing in Opens your claims menu Unclaims the chunk you are standing in Checks when a player was last online -- Admin Commands Available to administrators (Admin permission level): Slash Command Description Shows admin commands list Kicks a player from the server Broadcasts a mes"
   },
   {
-    "title": "afk",
+    "title": "AFK System",
     "description": "",
     "href": "/docs/features/afk",
     "headings": [
@@ -273,7 +273,7 @@
     "content": "AFK System The AFK (Away From Keyboard) system automatically detects when players become idle and announces their status to the server. If a player remains AFK for too long, they can be automatically kicked to free up server space. -- Going AFK Manually If you need to step away and want to let others know, you can mark yourself as AFK: The server will announce that you have gone AFK. Your AFK status will be visible to other players. -- Automatic AFK Detection You do not need to manually mark yourself as AFK every time. The system tracks player activity automatically. If you stop moving and interacting for a set period of time, you will be automatically marked as AFK. When this happens: The server announces that you are AFK. You will be notified that you have been marked AFK. -- Returning from AFK Simply move or interact with anything in the game to return from AFK status. The server will announce that you have returned. -- Auto-Kick If the server has auto-kick enabled, players who rema"
   },
   {
-    "title": "chat",
+    "title": "Chat System",
     "description": "",
     "href": "/docs/features/chat",
     "headings": [
@@ -290,7 +290,7 @@
     "content": "Chat System Obsidian Essentials enhances the default Minecraft chat with rank display, private messaging between players, chat lock for admins, and a personal chat clear option. -- Chat Rank Display If enabled by the server administrator, your rank tag will appear before your name in chat. For example: The rank shown is based on your highest-priority rank. -- Private Messages You can start a private conversation with another player that only the two of you can see. Starting a Private Chat Example: Once started, every message you send in chat will be sent privately to that player instead of the public chat. Ending a Private Chat This returns you to normal public chat. Both players must be online for private messages to work. -- Clearing Your Chat To clear your own chat screen (only clears it for you, not other players): You can also use the slash command: -- Chat Lock Administrators can lock the chat to prevent regular players from sending messages. When chat is locked: Regular players "
   },
   {
-    "title": "economy",
+    "title": "Economy & Money System",
     "description": "",
     "href": "/docs/features/economy",
     "headings": [
@@ -306,7 +306,7 @@
     "content": "Economy & Money System Obsidian Essentials includes a server-wide currency system that lets players earn, spend, transfer, and withdraw money. Administrators can manage player balances directly through the Admin Panel. -- Checking Your Balance To see how much money you have: or the alias: Your current balance will be displayed in chat. -- Paying Another Player To send money to another player: Example: This transfers 500 from your balance to Steve's. The transaction is confirmed in chat for both players. You cannot pay more than your current balance. Negative balances are not allowed. -- Withdrawing Money as an Item You can convert your money into a physical money item that can be given to or picked up by other players: Example: A money item will appear in your inventory. When another player picks it up, the value is added to their balance. -- Selling Items If your server has a sell system configured: Sell a specific quantity from your hand: Sell everything in your inventory: Prices are"
   },
   {
-    "title": "floating-text",
+    "title": "Floating Text (Holograms)",
     "description": "",
     "href": "/docs/features/floating-text",
     "headings": [
@@ -319,7 +319,7 @@
     "content": "Floating Text (Holograms) Admins can place floating text entities anywhere in the world. These are sometimes called holograms. They are useful for labeling areas, displaying shop prices, writing rules at spawn, or decorating builds. -- Creating Floating Text Floating text is created and managed through the Admin Panel: 1. Open the Admin Panel (). 2. Go to Floating Text. 3. Choose to create a new floating text entry. 4. Enter the text you want to display. 5. The floating text entity will be placed at or near your current location. -- Managing Existing Floating Text From Admin Panel > Floating Text, administrators can also: View a list of all floating text entities on the server. Edit the text of an existing hologram. Delete floating text entities that are no longer needed. -- Appearance Floating text appears as a small entity in the world that displays your message above it. The text is visible to all players within a reasonable distance. -- Notes Only administrators can create, edit, o"
   },
   {
-    "title": "homes",
+    "title": "Homes",
     "description": "",
     "href": "/docs/features/homes",
     "headings": [
@@ -336,7 +336,7 @@
     "content": "Homes The Homes system lets players save locations in the world and teleport back to them at any time. This is useful for marking your base, a farm, a mine, or any place you want to return to quickly. -- Setting a Home To save your current location as a home, type: Example: Home names must be a single word with no spaces. The home is saved at the exact spot where you are standing, including which dimension you are in (Overworld, Nether, or End). -- Teleporting to a Home To teleport to one of your saved homes: Example: After typing the command, a countdown timer will begin. You must stay still during this countdown. If you move too far from your starting position, the teleport will be cancelled. -- Listing Your Homes To see all of your saved homes: This shows the name and location of each saved home. You can also access your homes through the Community Panel: 1. Type to open the Community Panel. 2. Select Homes. 3. Your homes will be listed and can be selected to teleport or delete. -- "
   },
   {
-    "title": "kits",
+    "title": "Kit System",
     "description": "",
     "href": "/docs/features/kits",
     "headings": [
@@ -352,7 +352,7 @@
     "content": "Kit System Kits are pre-configured sets of items that players can claim in-game. Server administrators create kits by saving their current inventory as a kit. Players can then use a command to receive the kit's contents. -- Claiming a Kit To claim a specific kit: Example: The items from that kit will be added to your inventory. If your inventory does not have enough space, some items may be dropped on the ground near you. -- Viewing Available Kits To see which kits you have access to: This displays a list of available kits along with their cooldown status - whether you can claim them now or must wait. -- Kit Cooldowns Each kit has a cooldown period. After claiming a kit, you must wait until the cooldown expires before you can claim it again. Your cooldown time may be shorter than other players if your rank includes a cooldown multiplier reduction. Higher ranks (such as VIP or VIP+) often receive reduced cooldowns. -- Kit Access by Rank Not every kit is available to every player. The se"
   },
   {
-    "title": "land-claims",
+    "title": "Land Claims",
     "description": "",
     "href": "/docs/features/land-claims",
     "headings": [
@@ -370,7 +370,7 @@
     "content": "Land Claims The Land Claim system lets players protect areas of the world by claiming chunks. A claimed chunk prevents other players from building, breaking, or interacting in that area without permission. -- What Is a Chunk? A chunk is a 16×16 block section of the world that extends from the bottom of the world to the top (the full world height). When you claim a chunk, the entire vertical column of that 16×16 area is protected. -- Claiming a Chunk To claim the chunk you are currently standing in: If claiming has a cost enabled on your server, the money will be deducted from your balance automatically. If you cannot afford it, the claim will be rejected. The chunk borders will be shown with particles so you can see exactly what area you have claimed. -- Viewing Your Claims To see and manage all of your claimed chunks: This opens a menu showing all your active claims. From here you can review claim details and manage individual claims. You can also access claims through the Community P"
   },
   {
-    "title": "last-seen",
+    "title": "Last Seen",
     "description": "",
     "href": "/docs/features/last-seen",
     "headings": [
@@ -382,7 +382,7 @@
     "content": "Last Seen The Last Seen system tracks when each player was last online. Any player can look up another player's last activity, making it easy to check if a friend has been on recently. -- Checking When a Player Was Last Seen Example: The response will show how long ago that player was last online, formatted in days, hours, and minutes. For example: If the player is currently online, you will see that they are online right now. -- Notes Last Seen tracks players by their Minecraft account ID, so name changes do not cause issues. The system records each player's last activity automatically whenever they leave the server. If a player has never been seen before on this server, the system will indicate that. -- Admin: Manually Editing Last Seen In rare cases (such as data restoration), administrators can manually set a player's last-seen date using a script event command: This is intended for admin correction only and should not be used in normal circumstances."
   },
   {
-    "title": "player-stats",
+    "title": "Player Statistics",
     "description": "",
     "href": "/docs/features/player-stats",
     "headings": [
@@ -399,7 +399,7 @@
     "content": "Player Statistics Obsidian Essentials tracks combat, building, and activity statistics for every player. Stats are visible through the Community Panel and can be compared on server leaderboards. -- Viewing Your Stats 1. Type to open the Community Panel. 2. Select Stats. 3. Your statistics are displayed across three sections. -- What Is Tracked Combat Stats Stat Description Player Kills Number of other players you have killed Deaths Total times you have died K/D Ratio Kill/Death ratio (calculated automatically) Current Kill Streak Kills in a row without dying Max Kill Streak Your highest kill streak ever Entities Killed Total non-player mobs you have killed Building Stats Stat Description Blocks Broken Total blocks you have broken Blocks Placed Total blocks you have placed Activity Stats Stat Description Distance Walked Total blocks walked (horizontal distance) -- Leaderboards From the Stats menu, select View Leaderboards to see the top 10 players in each of the following categories: Pl"
   },
   {
-    "title": "redemption-codes",
+    "title": "Redemption Codes",
     "description": "",
     "href": "/docs/features/redemption-codes",
     "headings": [
@@ -413,7 +413,7 @@
     "content": "Redemption Codes Redemption codes are special codes that players can enter to receive in-game rewards. Server administrators create the codes and control what reward is granted when a code is redeemed. -- Redeeming a Code If you have been given a code, use this command to redeem it: Example: If the code is valid and still has uses remaining, you will receive the associated reward immediately. You will also see a confirmation message in chat. If the code has already been used up, or if you have already redeemed it (on servers where each player can only redeem a code once), you will receive an error message. -- Admin: Creating a Code Administrators can create redemption codes with this command: Parameters: CodeID - The code players will type (no spaces, e.g. ) MaxUses - Total number of times the code can be redeemed across all players OnePerPlayer - means each player can only redeem it once; allows unlimited per player Command - The Minecraft command to run when the code is redeemed (tar"
   },
   {
-    "title": "shops",
+    "title": "Player Shops",
     "description": "",
     "href": "/docs/features/shops",
     "headings": [
@@ -426,7 +426,7 @@
     "content": "Player Shops The Player Shops system allows players to set up their own buy and sell shops where other players can trade items using the server's currency. -- Accessing the Shop Players can browse and interact with shops through the Community Panel: 1. Type to open the Community Panel. 2. Select Shops. 3. A list of available player shops will appear. 4. Select a shop to view its inventory and buy or sell items. -- Selling Items If you want to sell items from your inventory to a player shop: Sell everything compatible in your inventory: The money earned from selling will be added to your balance automatically. -- Admin: Managing Player Shops Administrators can view and manage all player shops from the Admin Panel: 1. Open the Admin Panel (). 2. Go to Player Shops Manager. 3. From here you can: Browse all player shops Review pricing Remove shops if needed -- Shop Discounts by Rank Certain ranks may have a discount multiplier applied to shop transactions. This means VIP or higher-ranked p"
   },
   {
-    "title": "teleportation",
+    "title": "Teleportation",
     "description": "",
     "href": "/docs/features/teleportation",
     "headings": [
@@ -444,7 +444,7 @@
     "content": "Teleportation Obsidian Essentials provides several ways for players to teleport around the world: random teleportation, player-to-player teleport requests, and public warps created by admins. -- Random Teleport (RTP) Random Teleport sends you to a random safe location in the world. After running this command, the system immediately begins searching for a safe landing spot and teleports you as soon as one is found. A \"Finding a safe location...\" message appears on your screen while it searches. The system avoids unsafe surfaces including water, lava, magma blocks, and cactus. It also avoids underground locations by default. Cooldown: After using RTP, you must wait before using it again (default: 5 minutes). The cooldown is configured by the server administrator. Admin Bypass: Admins are exempt from the RTP cooldown by default. -- Teleport Requests (TPA) TPA lets you request to teleport to another player's location. The other player must accept before the teleport occurs. Sending a Reque"
   },
   {
-    "title": "basic-navigation",
+    "title": "Basic Navigation",
     "description": "",
     "href": "/docs/getting-started/basic-navigation",
     "headings": [
@@ -463,7 +463,7 @@
     "content": "Basic Navigation This page explains how to navigate the two main menus in Obsidian Essentials and how to use commands. -- The Two Main Menus Obsidian Essentials is controlled through two book items that open interactive in-game menus. Community Panel The Community Panel is the player-facing menu. It gives players access to: Homes Teleport requests Public warps Player shops Personal stats Reports Personal settings How to open it: Type in chat: A book item will be added to your inventory. Hold it and right-click (or use it on mobile/console) to open the menu. -- Admin Panel The Admin Panel is the administrator menu. It gives admins access to server management tools including bans, rank editing, settings, custom commands, and more. How to open it: Type in chat: or the alias: Hold the book and right-click (or use it) to open the menu. Only players with admin permissions or higher can access the Admin Panel. -- Using Commands All text-based commands use a prefix character typed before the c"
   },
   {
-    "title": "first-setup",
+    "title": "First Setup",
     "description": "",
     "href": "/docs/getting-started/first-setup",
     "headings": [
@@ -479,7 +479,7 @@
     "content": "First Setup After installing Obsidian Essentials, follow this guide to complete your initial configuration. This only needs to be done once. -- Step 1 - Claim the Owner Role The first thing you must do is designate yourself as the server owner. This gives you full access to every feature in the add-on. 1. Make sure you are operator (OP) on the world or realm. 2. Join the world and open chat. 3. Run the following command exactly as written: 4. You will receive a confirmation message that you are now set as the server owner. This can only be done once. Only the first person to run this command will be set as owner. -- Step 2 - Open the Admin Panel Once you are the server owner, you have access to the Admin Panel. 1. Type in chat: or the shorter alias: 2. A book item called Admin Panel will appear in your inventory. 3. Hold the book and right-click (or use it on mobile/console) to open the menu. -- Step 3 - Configure Settings Open the Admin Panel and go to Settings. The Settings menu is o"
   },
   {
-    "title": "installation",
+    "title": "Installation",
     "description": "",
     "href": "/docs/getting-started/installation",
     "headings": [
@@ -497,7 +497,7 @@
     "content": "Installation This guide walks you through installing Obsidian Essentials on your Minecraft Bedrock world or realm. -- Requirements Before installing, make sure your setup meets these requirements: Minecraft Bedrock Edition version 1.21.0 or higher A world or realm where you have operator (OP) permissions The Obsidian Essentials add-on file () -- Step 1 - Import the Pack 1. Locate the Obsidian Essentials file you downloaded. 2. Double-click the file. Minecraft should open automatically and begin importing both the Behavior Pack and Resource Pack. 3. Wait for the import confirmation message to appear in Minecraft. 4. If the packs do not import automatically, open Minecraft first, then open the file from your file manager. -- Step 2 - Apply the Packs to Your World The file contains both a Behavior Pack and a Resource Pack. Both must be activated on your world. For a Local World 1. Open Minecraft and go to Play. 2. Find your world and click the Edit (pencil) icon. 3. Select Resource Packs "
   },
   {
-    "title": "faq",
+    "title": "Frequently Asked Questions",
     "description": "",
     "href": "/docs/help/faq",
     "headings": [
@@ -510,10 +510,10 @@
       "Ranks",
       "Kits"
     ],
-    "content": "Frequently Asked Questions -- General What is Obsidian Essentials? Obsidian Essentials is a Minecraft Bedrock behavior pack add-on that adds server management tools, player features, an economy, land claims, ranks, and much more - all controlled from inside the game. What version of Minecraft does it require? Obsidian Essentials requires Minecraft Bedrock Edition 1.21.0 or higher. Does it work on Realms? Yes. Obsidian Essentials is designed to work on both local worlds and Minecraft Realms. Does the add-on require experimental features? Yes. The Beta APIs (Scripting APIs) experimental feature must be enabled in your world settings for the add-on to function. -- Setup How do I become the server owner? After installing the add-on and joining your world as an OP, run this command in chat: This designates you as the server owner with full access to all features. Can I change the owner later? No. The owner designation is permanent and cannot be reassigned once set. Only the original owner o"
+    "content": "Frequently Asked Questions -- General What is Obsidian Essentials? Obsidian Essentials is a Minecraft Bedrock behavior pack add-on that adds server management tools, player features, an economy, land claims, ranks, and more. Everything is controlled from inside the game. What version of Minecraft does it require? Obsidian Essentials requires Minecraft Bedrock Edition 1.21.0 or higher. Does it work on Realms? Yes. Obsidian Essentials is designed to work on both local worlds and Minecraft Realms. Does the add-on require experimental features? Yes. The Beta APIs (Scripting APIs) experimental feature must be enabled in your world settings for the add-on to function. -- Setup How do I become the server owner? After installing the add-on and joining your world as an OP, run this command in chat: This designates you as the server owner with full access to all features. Can I change the owner later? No. The owner designation is permanent and cannot be reassigned once set. Only the original own"
   },
   {
-    "title": "troubleshooting",
+    "title": "Troubleshooting",
     "description": "",
     "href": "/docs/help/troubleshooting",
     "headings": [
@@ -528,10 +528,9 @@
       "Economy Balance Is Missing / Shows Zero",
       "Chat Is Locked",
       "AFK Auto-Kick Is Kicking Staff",
-      "Anti-Cheat Is Flagging Legitimate Players",
       "Still Having Issues?"
     ],
-    "content": "Troubleshooting This page covers the most common issues with Obsidian Essentials and how to resolve them. -- The Add-On Is Not Working At All Symptoms: Commands do nothing. Menus do not open. No response to . Solutions: 1. Confirm the behavior pack is active on your world (not just imported - it must be activated in the world's settings). 2. Go to your world settings and confirm Beta APIs (Scripting APIs) is enabled under Experiments. 3. Relaunch the world after making any changes to pack or experiment settings. 4. Confirm you are OP on the world, then run if setup has not been completed. -- \"Server must be set up first\" Message Cause: The initial owner setup has not been completed. Solution: An OP player must run: This only needs to be done once. Only the person who should be the permanent server owner should do this. -- Commands Are Not Being Recognized Symptoms: Typing sends the message to chat instead of triggering a command. Solutions: Confirm the command prefix on your server. Th"
+    "content": "Troubleshooting Common issues with Obsidian Essentials and how to fix them. -- The Add-On Is Not Working At All Symptoms: Commands do nothing. Menus do not open. No response to . Solutions: 1. Confirm the behavior pack is active on your world (not just imported - it must be activated in the world's settings). 2. Go to your world settings and confirm Beta APIs (Scripting APIs) is enabled under Experiments. 3. Relaunch the world after making any changes to pack or experiment settings. 4. Confirm you are OP on the world, then run if setup has not been completed. -- \"Server must be set up first\" Message Cause: The initial owner setup has not been completed. Solution: An OP player must run: This only needs to be done once. Only the person who should be the permanent server owner should do this. -- Commands Are Not Being Recognized Symptoms: Typing sends the message to chat instead of triggering a command. Solutions: Confirm the command prefix on your server. The default is but your admin ma"
   },
   {
     "title": "Introduction",
@@ -544,6 +543,6 @@
       "Quick Start",
       "Version"
     ],
-    "content": "Obsidian Essentials Obsidian Essentials is an add-on for Minecraft Bedrock Edition — containing both a Behavior Pack and Resource Pack — that gives server owners and administrators a complete suite of management tools, all controlled from inside the game through interactive menus and chat commands. No external apps. No config files. Everything is done in-game. -- What It Provides System Description Economy Server currency with player balances, direct payments, item withdrawals, and player-owned shops. Homes & Teleportation Save personal home locations, use random teleport, and send player-to-player TPA requests. Land Claims Protect builds by claiming chunks. Full-height protection with optional costs and TNT blocking. Ranks & Permissions Granular rank system with configurable permissions for every feature - homes, kits, warps, commands, and more. Moderation Tools Warn, kick, and ban players with full logging. Chat lock, report system, and action history. Kits & Codes Create item kits w"
+    "content": "Obsidian Essentials Obsidian Essentials is an add-on for Minecraft Bedrock Edition (both a Behavior Pack and Resource Pack) that gives server owners and administrators a complete suite of management tools, all controlled from inside the game through interactive menus and chat commands. No external apps. No config files. Everything is done in-game. -- What It Provides System Description Economy Server currency with player balances, direct payments, item withdrawals, and player-owned shops. Homes & Teleportation Save personal home locations, use random teleport, and send player-to-player TPA requests. Land Claims Protect builds by claiming chunks. Full-height protection with optional costs and TNT blocking. Ranks & Permissions Granular rank system with configurable permissions for every feature - homes, kits, warps, commands, and more. Moderation Tools Warn, kick, and ban players with full logging. Chat lock, report system, and action history. Kits & Codes Create item kits with cooldowns"
   }
 ]
