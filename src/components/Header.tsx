@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import searchIndex from '@/generated/search-index.json';
+import { useMobileNav } from './MobileNavContext';
 
 interface SearchEntry {
   title: string;
@@ -87,6 +88,7 @@ export default function Header() {
   const [selectedIdx, setSelectedIdx] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
+  const { setOpen: setMobileNavOpen } = useMobileNav();
 
   const results = query.trim().length >= 2 ? search(query) : [];
 
@@ -135,7 +137,18 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 h-14 border-b border-border bg-bg/95 backdrop-blur-sm flex items-center px-6 gap-6">
+      <header className="fixed top-0 left-0 right-0 z-50 h-14 border-b border-border bg-bg/95 backdrop-blur-sm flex items-center px-4 gap-3 sm:px-6 sm:gap-6">
+        {/* Mobile menu button */}
+        <button
+          onClick={() => setMobileNavOpen(true)}
+          className="lg:hidden text-text-muted hover:text-text-primary p-1.5 rounded-md transition-colors shrink-0"
+          aria-label="Open navigation"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
         {/* Logo */}
         <Link href="/docs/introduction" className="flex items-center gap-2.5 shrink-0">
           <Image
