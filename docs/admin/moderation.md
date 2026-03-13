@@ -1,5 +1,5 @@
 ---
-lastUpdated: 2026-03-13
+lastUpdated: 2026-03-13T12:00:00Z
 ---
 
 # Moderation Tools
@@ -87,12 +87,15 @@ This forces chat lock off regardless of its current state.
 
 ## Clearing Chat
 
-To clear the chat for all players:
+To clear the chat for all players (admin slash command):
+```
+/oe:clearchat
+```
+
+To clear just your own chat screen:
 ```
 !clearchat
 ```
-
-> When used by an admin, this clears chat for the entire server.
 
 ---
 

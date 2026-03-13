@@ -1,46 +1,77 @@
 ---
-lastUpdated: 2026-03-13
+lastUpdated: 2026-03-13T12:00:00Z
 ---
 
 # Player Statistics
 
-Obsidian Essentials tracks various statistics for each player. Players can view their own stats through the Community Panel.
+Obsidian Essentials tracks combat, building, and activity statistics for every player. Stats are visible through the Community Panel and can be compared on server leaderboards.
 
 ---
 
 ## Viewing Your Stats
 
-To view your personal statistics:
-
 1. Type `!book` to open the **Community Panel**.
 2. Select **Stats**.
-3. Your statistics will be displayed.
+3. Your statistics are displayed across three sections.
 
 ---
 
 ## What Is Tracked
 
-The following information is tracked per player:
+### Combat Stats
 
 | Stat | Description |
 |---|---|
-| **Balance** | Your current money balance |
-| **Playtime** | Total time spent on the server |
-| **Last Seen** | When you were last online |
+| **Player Kills** | Number of other players you have killed |
+| **Deaths** | Total times you have died |
+| **K/D Ratio** | Kill/Death ratio (calculated automatically) |
+| **Current Kill Streak** | Kills in a row without dying |
+| **Max Kill Streak** | Your highest kill streak ever |
+| **Entities Killed** | Total non-player mobs you have killed |
 
-Additional stats (such as kills, deaths, money earned, and money spent) may be displayed depending on which features are enabled on your server by the administrator.
+### Building Stats
+
+| Stat | Description |
+|---|---|
+| **Blocks Broken** | Total blocks you have broken |
+| **Blocks Placed** | Total blocks you have placed |
+
+### Activity Stats
+
+| Stat | Description |
+|---|---|
+| **Distance Walked** | Total blocks walked (horizontal distance) |
 
 ---
 
-## Playtime
+## Leaderboards
 
-Your time played on the server is recorded and accumulates across all sessions. This is displayed in a readable format such as hours and minutes.
+From the Stats menu, select **View Leaderboards** to see the top 10 players in each of the following categories:
+
+- **Player Kills**
+- **Blocks Broken**
+- **Blocks Placed**
+- **Max Kill Streak**
+
+Your own rank in each category is shown at the bottom of the leaderboard.
+
+---
+
+## Resetting Your Stats
+
+You can reset all of your own statistics:
+
+1. Open **Community Panel > Stats**.
+2. Select the reset option.
+3. Type `CONFIRM` in the text field to confirm.
+
+This permanently wipes all your tracked stats and cannot be undone.
 
 ---
 
 ## Admin: Adjusting Playtime
 
-Administrators can manually set a player's recorded playtime if needed:
+Administrators can manually correct a player's recorded playtime:
 
 ```
 !settimeplayed [PlayerName] [Time]
@@ -57,5 +88,3 @@ Aliases: `!stp`, `!restoretime`
 ```
 !settimeplayed Steve 10h
 ```
-
-This is intended for correcting data if a player's playtime was lost or inaccurate.

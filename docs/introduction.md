@@ -1,12 +1,12 @@
 ---
 title: Introduction
 description: Official documentation for Obsidian Essentials, a comprehensive server management add-on for Minecraft Bedrock Edition.
-lastUpdated: 2026-03-13
+lastUpdated: 2026-03-13T12:00:00Z
 ---
 
 # Obsidian Essentials
 
-Obsidian Essentials is a behavior pack add-on for Minecraft Bedrock Edition that gives server owners and administrators a complete suite of management tools - all controlled from inside the game through interactive menus and chat commands.
+Obsidian Essentials is an add-on for Minecraft Bedrock Edition — containing both a Behavior Pack and Resource Pack — that gives server owners and administrators a complete suite of management tools, all controlled from inside the game through interactive menus and chat commands.
 
 No external apps. No config files. Everything is done in-game.
 
@@ -40,8 +40,8 @@ Everything in Obsidian Essentials is accessed through two in-game book items:
 
 ## Quick Start
 
-**1. Install the pack**
-Import the `.mcpack` file and activate it on your world. See the [Installation guide](/docs/getting-started/installation).
+**1. Install the add-on**
+Import the `.mcaddon` file and activate both the Behavior Pack and Resource Pack on your world. See the [Installation guide](/docs/getting-started/installation).
 
 **2. Claim the owner role**
 As an OP, run `/scriptevent realm:setup` in chat to designate yourself as the server owner.

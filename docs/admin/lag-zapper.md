@@ -1,34 +1,50 @@
 ---
-lastUpdated: 2026-03-13
+lastUpdated: 2026-03-13T12:00:00Z
 ---
 
 # Lag Zapper
 
-The Lag Zapper is an admin tool for cleaning up the server world to reduce lag. It removes dropped items and unnecessary entities that accumulate during normal play.
+The Lag Zapper automatically removes all dropped items from the Overworld on a configurable interval to reduce entity lag. It can be enabled for continuous automatic cleanup or left disabled for manual use only.
 
 ---
 
-## Using the Lag Zapper
+## Configuring the Lag Zapper
 
 1. Open the **Admin Panel** (`!adminpanel`).
 2. Go to **Lag Zapper**.
-3. Choose the cleanup action you want to perform.
-4. Confirm the action.
+3. Set the **Ground Item Clear Interval** (e.g., `1m`, `30s`, `5m 20s`).
+4. Toggle **Enabled** on or off.
+5. Save.
 
-The cleanup happens immediately.
+---
+
+## Automatic Mode
+
+When enabled, the Lag Zapper runs on the interval you configured. Before each cleanup:
+
+- A warning message is broadcast to all players: **"Clearing ground items in 10 seconds..."**
+- A 3-2-1 countdown is shown in the final seconds.
+- All dropped items in the **Overworld** are then removed.
+
+The 10-second warning gives players time to pick up any items they care about.
+
+---
+
+## What Gets Removed
+
+Only **dropped item entities** in the **Overworld** are removed. Mobs, armor stands, and items in other dimensions (Nether, End) are not affected.
 
 ---
 
 ## When to Use It
 
-- After large events or gatherings where many items were dropped
-- When the server is experiencing noticeable slowdown
-- As regular maintenance to keep performance optimal
+- Set a regular interval (e.g., every 5 minutes) to keep the Overworld clean during active play.
+- Disable auto-cleanup and configure it manually if your server has sensitive item drops (e.g., events or giveaways).
 
 ---
 
 ## Notes
 
-- The Lag Zapper is a manual tool - it only runs when an admin activates it.
-- Dropped items that are removed cannot be recovered.
-- Warn players before running the Lag Zapper so they can pick up any items they care about.
+- Removed dropped items cannot be recovered.
+- The Lag Zapper only affects the Overworld dimension.
+- Default interval: 60 seconds (disabled by default).

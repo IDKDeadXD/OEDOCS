@@ -1,5 +1,5 @@
 ---
-lastUpdated: 2026-03-13
+lastUpdated: 2026-03-13T12:00:00Z
 ---
 
 # Kit System
@@ -87,6 +87,6 @@ Administrators can manage all kits through the **Admin Panel**:
 
 ---
 
-## Admin: Enabling or Disabling the Kit System
+## Notes
 
-The kit system can be enabled or disabled from **Admin Panel > Feature Toggles**.
+Kits are accessed exclusively through chat commands (`!kit`, `!kits`). There is no Kits button on the Community Panel.

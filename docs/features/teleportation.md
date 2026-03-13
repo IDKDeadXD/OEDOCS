@@ -1,5 +1,5 @@
 ---
-lastUpdated: 2026-03-13
+lastUpdated: 2026-03-13T12:00:00Z
 ---
 
 # Teleportation
@@ -16,17 +16,13 @@ Random Teleport sends you to a random safe location in the world.
 !rtp
 ```
 
-After running this command:
+After running this command, the system immediately begins searching for a safe landing spot and teleports you as soon as one is found. A "Finding a safe location..." message appears on your screen while it searches.
 
-1. A countdown timer begins.
-2. You must stay still during the countdown. Moving too much will cancel the teleport.
-3. Once the countdown finishes, you are teleported to a random location.
+The system avoids unsafe surfaces including water, lava, magma blocks, and cactus. It also avoids underground locations by default.
 
-The system automatically searches for a safe landing spot - it avoids water, lava, and other hazardous surfaces.
+**Cooldown:** After using RTP, you must wait before using it again (default: 5 minutes). The cooldown is configured by the server administrator.
 
-**Cooldown:** After using RTP, you must wait a set amount of time before using it again. The cooldown is configured by the server administrator.
-
-**Admin Bypass:** Admins may be exempt from the RTP cooldown, depending on server settings.
+**Admin Bypass:** Admins are exempt from the RTP cooldown by default.
 
 ---
 
@@ -51,7 +47,7 @@ The other player will receive a notification that you want to teleport to them. 
 
 If someone sends you a TPA request, accept it with:
 ```
-!tpaccept
+!accept
 ```
 
 Once accepted, the requesting player will begin their teleport countdown and be teleported to you.
@@ -60,12 +56,12 @@ Once accepted, the requesting player will begin their teleport countdown and be 
 
 To reject an incoming TPA request:
 ```
-!tpdeny
+!deny
 ```
 
 The requesting player will be notified that their request was denied.
 
-> TPA requests expire after a set amount of time if not responded to.
+> TPA requests expire after 120 seconds if not responded to. There is a 60-second cooldown between sending requests.
 
 ---
 
@@ -85,7 +81,7 @@ You can only teleport to warps that the administrator has made accessible to you
 
 ## Teleport Delay
 
-Most teleports include a short countdown (typically 5 seconds) before the teleport happens. During this time:
+Home, TPA, and warp teleports include a short countdown (default: 5 seconds) before the teleport happens. During this time:
 
 - You must remain (mostly) still.
 - Moving too far from your starting position will cancel the teleport.
@@ -115,9 +111,8 @@ Administrators can configure teleportation in the **Admin Panel > Settings**:
 | Setting | What It Controls |
 |---|---|
 | **RTP Enabled** | Turn Random Teleport on or off |
-| **RTP Range** | Maximum distance from world center for RTP |
-| **RTP Cooldown** | Seconds players must wait between RTPs |
-| **RTP Countdown** | Countdown seconds before RTP teleport |
-| **Admin Bypass** | Admins skip RTP cooldown |
+| **RTP Range** | Maximum distance from world center for RTP (default: 10,000) |
+| **RTP Cooldown** | Seconds players must wait between RTPs (default: 300) |
+| **Admin Bypass** | Admins skip RTP cooldown (default: on) |
 | **TPA Enabled** | Turn the TPA request system on or off |
-| **Teleport Delay** | Default countdown before most teleports |
+| **Teleport Delay** | Default countdown before home/TPA/warp teleports (default: 5s) |

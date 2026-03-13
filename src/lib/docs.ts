@@ -52,10 +52,14 @@ function extractToc(html: string): TocEntry[] {
 
 function formatDate(raw: string): string | null {
   try {
-    return new Date(raw).toLocaleDateString('en-US', {
+    const d = new Date(raw);
+    if (isNaN(d.getTime())) return raw;
+    return d.toLocaleString('en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
     });
   } catch {
     return raw;

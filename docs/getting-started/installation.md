@@ -1,5 +1,5 @@
 ---
-lastUpdated: 2026-03-13
+lastUpdated: 2026-03-13T12:00:00Z
 ---
 
 # Installation
@@ -14,29 +14,30 @@ Before installing, make sure your setup meets these requirements:
 
 - **Minecraft Bedrock Edition** version **1.21.0 or higher**
 - A world or realm where you have **operator (OP) permissions**
-- The Obsidian Essentials **behavior pack** file (`.mcpack`)
+- The Obsidian Essentials add-on file (`.mcaddon`)
 
 ---
 
 ## Step 1 - Import the Pack
 
-1. Locate the Obsidian Essentials `.mcpack` file you downloaded.
-2. Double-click the file. Minecraft should open automatically and begin importing the pack.
+1. Locate the Obsidian Essentials `.mcaddon` file you downloaded.
+2. Double-click the file. Minecraft should open automatically and begin importing both the Behavior Pack and Resource Pack.
 3. Wait for the import confirmation message to appear in Minecraft.
-4. If the pack does not import automatically, open Minecraft first, then open the file from your file manager.
+4. If the packs do not import automatically, open Minecraft first, then open the file from your file manager.
 
 ---
 
-## Step 2 - Apply the Pack to Your World
+## Step 2 - Apply the Packs to Your World
+
+The `.mcaddon` file contains both a **Behavior Pack** and a **Resource Pack**. Both must be activated on your world.
 
 ### For a Local World
 
 1. Open Minecraft and go to **Play**.
 2. Find your world and click the **Edit** (pencil) icon.
-3. Select **Behavior Packs** from the left menu.
-4. Under **My Packs**, find **Obsidian Essentials** and click it.
-5. Click **Activate** to add it to your world.
-6. Return to the world settings and click **Play** to launch.
+3. Select **Resource Packs** from the left menu. Under **My Packs**, find **Obsidian Essentials** and click **Activate**.
+4. Select **Behavior Packs** from the left menu. Under **My Packs**, find **Obsidian Essentials** and click **Activate**.
+5. Return to the world settings and click **Play** to launch.
 
 > **Important:** If prompted about experimental features being required, click **Activate Experiments** to continue. The add-on will not function without this.
 
@@ -44,8 +45,8 @@ Before installing, make sure your setup meets these requirements:
 
 1. Open Minecraft and go to **Realms**.
 2. Select your realm and click the **Edit** (pencil) icon.
-3. Go to **Behavior Packs**.
-4. Find **Obsidian Essentials** under **My Packs** and click **Activate**.
+3. Go to **Resource Packs**, find **Obsidian Essentials** under **My Packs**, and click **Activate**.
+4. Go to **Behavior Packs**, find **Obsidian Essentials** under **My Packs**, and click **Activate**.
 5. Confirm any prompts about experimental gameplay.
 6. The changes will apply the next time players join the realm.
 
@@ -85,8 +86,8 @@ This will display the list of available player commands, confirming the add-on i
 
 ## Troubleshooting Installation
 
-**The pack is not showing up in my pack list.**
-Make sure the `.mcpack` file imported successfully. Try closing and reopening Minecraft, then check under Behavior Packs again.
+**The packs are not showing up in my pack list.**
+Make sure the `.mcaddon` file imported successfully. Try closing and reopening Minecraft, then check under both Resource Packs and Behavior Packs.
 
 **Commands are not working.**
 Confirm that experimental features are enabled in your world settings. Also check that the behavior pack is actually active on the world, not just imported.

@@ -53,7 +53,7 @@
       "Use Cases",
       "Notes"
     ],
-    "content": "Item Banning The Item Banning system allows administrators to prevent specific items from existing in player inventories. When a banned item is detected, it is automatically removed. The check runs once per second. -- Managing Banned Items 1. Open the Admin Panel (). 2. Go to Item Banning. 3. From here you can: View the current list of banned items Add items to the ban list Remove items from the ban list -- How It Works The system scans all online player inventories every second. If a player is found carrying a banned item, it is removed from their inventory automatically. The player may receive a notification. -- Use Cases Preventing players from obtaining admin-only items Removing overpowered or exploitable items from circulation Enforcing server-specific item restrictions -- Notes Item banning applies to all players regardless of rank (unless they have bypass permissions). Admins and owners are not immune to item banning by default - configure bypass permissions in the Ranks Editor "
+    "content": "Item Banning The Item Banning system allows administrators to prevent specific items from existing in player inventories. When a banned item is detected, it is automatically removed. The check runs once per second. -- Managing Banned Items 1. Open the Admin Panel (). 2. Go to Item Banning. 3. From here you can: View the current list of banned items Add items to the ban list Remove items from the ban list -- How It Works The system scans all online player inventories every second. If a player is found carrying a banned item, it is removed from their inventory automatically. The player may receive a notification. -- Use Cases Preventing players from obtaining admin-only items Removing overpowered or exploitable items from circulation Enforcing server-specific item restrictions -- Notes Players with the tag are exempt from item banning by default. Regular players have banned items removed automatically without exception. This system runs continuously in the background while the server is "
   },
   {
     "title": "kits-management",
@@ -65,7 +65,6 @@
       "Configuring a Kit",
       "Deleting a Kit",
       "Kit Access by Rank",
-      "Enabling or Disabling the Kit System",
       "Related Player Commands"
     ],
     "content": "Kit Management Administrators create and manage item kits that players can claim in-game. Kits are configured through both chat commands and the Admin Panel. -- Creating a Kit 1. Fill your inventory with the exact items you want the kit to contain. 2. Type in chat: Example: 3. Your entire current inventory is saved as that kit. Make sure your inventory contains only the items intended for the kit before saving. -- Configuring a Kit After creating a kit, configure it through the Admin Panel: 1. Open the Admin Panel (). 2. Go to Kits Config. 3. Select the kit you want to configure. 4. Set the following options: Cooldown - How long players must wait between claims Accessible Ranks - Which ranks can claim this kit -- Deleting a Kit 1. Open the Admin Panel. 2. Go to Kits Config. 3. Select the kit. 4. Choose the delete option. -- Kit Access by Rank Kit access is controlled per rank through Admin Panel > Ranks Editor: Set to a list of kit names the rank can access. Use to grant access to all "
@@ -76,11 +75,13 @@
     "href": "/docs/admin/lag-zapper",
     "headings": [
       "Lag Zapper",
-      "Using the Lag Zapper",
+      "Configuring the Lag Zapper",
+      "Automatic Mode",
+      "What Gets Removed",
       "When to Use It",
       "Notes"
     ],
-    "content": "Lag Zapper The Lag Zapper is an admin tool for cleaning up the server world to reduce lag. It removes dropped items and unnecessary entities that accumulate during normal play. -- Using the Lag Zapper 1. Open the Admin Panel (). 2. Go to Lag Zapper. 3. Choose the cleanup action you want to perform. 4. Confirm the action. The cleanup happens immediately. -- When to Use It After large events or gatherings where many items were dropped When the server is experiencing noticeable slowdown As regular maintenance to keep performance optimal -- Notes The Lag Zapper is a manual tool - it only runs when an admin activates it. Dropped items that are removed cannot be recovered. Warn players before running the Lag Zapper so they can pick up any items they care about."
+    "content": "Lag Zapper The Lag Zapper automatically removes all dropped items from the Overworld on a configurable interval to reduce entity lag. It can be enabled for continuous automatic cleanup or left disabled for manual use only. -- Configuring the Lag Zapper 1. Open the Admin Panel (). 2. Go to Lag Zapper. 3. Set the Ground Item Clear Interval (e.g., , , ). 4. Toggle Enabled on or off. 5. Save. -- Automatic Mode When enabled, the Lag Zapper runs on the interval you configured. Before each cleanup: A warning message is broadcast to all players: \"Clearing ground items in 10 seconds...\" A 3-2-1 countdown is shown in the final seconds. All dropped items in the Overworld are then removed. The 10-second warning gives players time to pick up any items they care about. -- What Gets Removed Only dropped item entities in the Overworld are removed. Mobs, armor stands, and items in other dimensions (Nether, End) are not affected. -- When to Use It Set a regular interval (e.g., every 5 minutes) to keep t"
   },
   {
     "title": "mob-management",
@@ -166,12 +167,13 @@
     "href": "/docs/admin/spawn-protection",
     "headings": [
       "Spawn Protection",
-      "Setting Up Spawn Protection",
-      "Who Is Affected",
-      "Configuration",
+      "Creating a Protection Area",
+      "Per-Area Settings",
+      "Managing Areas",
+      "Multiple Protection Areas",
       "Notes"
     ],
-    "content": "Spawn Protection Spawn Protection creates a safe zone around your server's spawn point. Players cannot break blocks, place blocks, or cause damage in the protected area. This prevents griefing and keeps your spawn looking clean. -- Setting Up Spawn Protection 1. Open the Admin Panel (). 2. Go to Spawn Protection. 3. Configure the protection settings. 4. Save your settings. The protection zone is centered around the world spawn point. -- Who Is Affected Regular players cannot build, break, or damage the spawn area. Administrators with bypass permissions can still interact freely with the spawn area. -- Configuration From Admin Panel > Spawn Protection, you can configure the protection zone. The settings control the size of the protected area. Adjust the radius to match the size of your spawn build. A larger spawn area requires a larger protection radius. -- Notes Spawn protection works independently of the Land Claims system. If you want to update your spawn point, use the standard Mine"
+    "content": "Spawn Protection Spawn Protection lets administrators define named circular protection zones anywhere in the world. Each zone prevents players from building or breaking within its radius, with configurable per-area behavior. -- Creating a Protection Area 1. Go to the location you want to protect (or position yourself near it). 2. Open the Admin Panel (). 3. Go to Spawn Protection. 4. Select the option to create a new area. 5. Enter a name for the area (e.g., , , ). 6. Set a radius (5–200 blocks). 7. Choose whether to use your current position or the world spawn point as the center. 8. Choose whether to enable the area immediately. -- Per-Area Settings Each protection area has its own set of toggles: Setting Default What It Does Send Entry/Exit Messages On Tells players when they enter or leave the protected area Set Adventure Mode On Switches players to Adventure mode inside the area, preventing block breaking/placing Admin Bypass On Admins are not affected by the protection effects Gi"
   },
   {
     "title": "vanish",
@@ -223,7 +225,7 @@
       "Script Event Commands",
       "Notes"
     ],
-    "content": "Admin Commands These commands are available to players with admin permissions or higher. They are entered in chat using the prefix (or your server's configured prefix). Players without admin permissions will not be able to use these commands. -- Panel & Help Command Aliases Description Displays the list of admin commands Gives you the Admin Panel book Toggles admin mode (saves your inventory, switches to creative) -- Player Management Command Description Kicks a player from the server Issues a formal warning to a player (logged) Sends a message to all players on the server Runs a Minecraft command through the add-on Checks a player's current XP level Examples: -- Vanish Command Aliases Description Toggles vanish mode (makes you invisible to players) -- Economy Money management is handled through the Admin Panel > Players menu. Select a player and adjust their balance from there. -- Redemption Codes Command Description Creates a new redemption code Deletes an existing redemption code Li"
+    "content": "Admin Commands These commands are available to players with admin permissions or higher. They are entered in chat using the prefix (or your server's configured prefix). Players without admin permissions will not be able to use these commands. -- Panel & Help Command Aliases Description Displays the list of admin commands Gives you the Admin Panel book Toggles admin mode (saves your inventory, switches to creative) -- Player Management Command Description Kicks a player from the server Issues a formal warning to a player (logged) Sends a message to all players on the server Runs a Minecraft command through the add-on Examples: -- Vanish Command Aliases Description Toggles vanish mode (makes you invisible to players) -- Economy Money management is handled through the Admin Panel > Players menu. Select a player and adjust their balance from there. -- Redemption Codes Command Description Creates a new redemption code Deletes an existing redemption code Lists all active redemption codes Exa"
   },
   {
     "title": "player-commands",
@@ -239,7 +241,6 @@
       "Kits",
       "Chat",
       "Other",
-      "Slash Commands",
       "Notes"
     ],
     "content": "Player Commands These commands are available to all players, subject to rank restrictions configured by the server administrator. All commands use the prefix by default (your server may use a different prefix - check with your admin). -- General Command Aliases Description Displays a list of all commands available to you Gives you the Community Panel book - Shows add-on and server information - Displays the current add-on version -- Economy Command Aliases Description Shows your current money balance - Transfers money to another player Converts money into a physical money item - Sells items from your hand - Sells all applicable items in your inventory Examples: -- Homes Command Description Saves your current location as a home Teleports you to a saved home (with countdown) Deletes a saved home Lists all of your saved homes Examples: -- Teleportation Command Description Sends a teleport request to another player Accepts an incoming teleport request Denies an incoming teleport request Ex"
@@ -250,12 +251,11 @@
     "href": "/docs/commands/slash-commands",
     "headings": [
       "Slash Commands",
-      "Available Slash Commands",
-      "Available to All Players",
-      "Admin Only",
+      "Player Commands",
+      "Admin Commands",
       "Notes"
     ],
-    "content": "Slash Commands In addition to the prefix chat commands, Obsidian Essentials registers a small set of native Minecraft slash commands accessible directly from the command bar. -- Available Slash Commands Available to All Players Slash Command Description Opens the Community Panel Clears your chat screen Admin Only Slash Command Description Adds a rank to a player Removes a rank from a player Lists all ranks a player has Adjusts the priority of a player's rank Creates a new rank -- Notes Slash commands appear in Minecraft's autocomplete when you type . All other features are accessed through chat commands or the in-game panel menus. For a full list of chat commands, see Player Commands and Admin Commands."
+    "content": "Slash Commands In addition to prefix chat commands, Obsidian Essentials registers native Minecraft slash commands using the namespace. These appear in Minecraft's autocomplete when you type . -- Player Commands Available to all players (Normal permission level): Slash Command Description Shows available player commands Gives the Community Panel book Shows add-on information Shows the current add-on version Checks your current balance Pays another player Sends a teleport request to a player Accepts a pending teleport request Denies a pending teleport request Marks you as AFK Teleports to a saved home Saves your current location as a home Deletes a saved home Lists all your saved homes Claims the chunk you are standing in Opens your claims menu Unclaims the chunk you are standing in Checks when a player was last online -- Admin Commands Available to administrators (Admin permission level): Slash Command Description Shows admin commands list Kicks a player from the server Broadcasts a mes"
   },
   {
     "title": "afk",
@@ -347,7 +347,7 @@
       "Kit Access by Rank",
       "Admin: Creating a Kit",
       "Admin: Managing Kits",
-      "Admin: Enabling or Disabling the Kit System"
+      "Notes"
     ],
     "content": "Kit System Kits are pre-configured sets of items that players can claim in-game. Server administrators create kits by saving their current inventory as a kit. Players can then use a command to receive the kit's contents. -- Claiming a Kit To claim a specific kit: Example: The items from that kit will be added to your inventory. If your inventory does not have enough space, some items may be dropped on the ground near you. -- Viewing Available Kits To see which kits you have access to: This displays a list of available kits along with their cooldown status - whether you can claim them now or must wait. -- Kit Cooldowns Each kit has a cooldown period. After claiming a kit, you must wait until the cooldown expires before you can claim it again. Your cooldown time may be shorter than other players if your rank includes a cooldown multiplier reduction. Higher ranks (such as VIP or VIP+) often receive reduced cooldowns. -- Kit Access by Rank Not every kit is available to every player. The se"
   },
@@ -389,10 +389,14 @@
       "Player Statistics",
       "Viewing Your Stats",
       "What Is Tracked",
-      "Playtime",
+      "Combat Stats",
+      "Building Stats",
+      "Activity Stats",
+      "Leaderboards",
+      "Resetting Your Stats",
       "Admin: Adjusting Playtime"
     ],
-    "content": "Player Statistics Obsidian Essentials tracks various statistics for each player. Players can view their own stats through the Community Panel. -- Viewing Your Stats To view your personal statistics: 1. Type to open the Community Panel. 2. Select Stats. 3. Your statistics will be displayed. -- What Is Tracked The following information is tracked per player: Stat Description Balance Your current money balance Playtime Total time spent on the server Last Seen When you were last online Additional stats (such as kills, deaths, money earned, and money spent) may be displayed depending on which features are enabled on your server by the administrator. -- Playtime Your time played on the server is recorded and accumulates across all sessions. This is displayed in a readable format such as hours and minutes. -- Admin: Adjusting Playtime Administrators can manually set a player's recorded playtime if needed: Accepted time formats: (5 hours, 30 minutes) (2 days) (3600 seconds) Aliases: , Example:"
+    "content": "Player Statistics Obsidian Essentials tracks combat, building, and activity statistics for every player. Stats are visible through the Community Panel and can be compared on server leaderboards. -- Viewing Your Stats 1. Type to open the Community Panel. 2. Select Stats. 3. Your statistics are displayed across three sections. -- What Is Tracked Combat Stats Stat Description Player Kills Number of other players you have killed Deaths Total times you have died K/D Ratio Kill/Death ratio (calculated automatically) Current Kill Streak Kills in a row without dying Max Kill Streak Your highest kill streak ever Entities Killed Total non-player mobs you have killed Building Stats Stat Description Blocks Broken Total blocks you have broken Blocks Placed Total blocks you have placed Activity Stats Stat Description Distance Walked Total blocks walked (horizontal distance) -- Leaderboards From the Stats menu, select View Leaderboards to see the top 10 players in each of the following categories: Pl"
   },
   {
     "title": "redemption-codes",
@@ -437,7 +441,7 @@
       "Admin Warps",
       "Admin: Teleport Settings"
     ],
-    "content": "Teleportation Obsidian Essentials provides several ways for players to teleport around the world: random teleportation, player-to-player teleport requests, and public warps created by admins. -- Random Teleport (RTP) Random Teleport sends you to a random safe location in the world. After running this command: 1. A countdown timer begins. 2. You must stay still during the countdown. Moving too much will cancel the teleport. 3. Once the countdown finishes, you are teleported to a random location. The system automatically searches for a safe landing spot - it avoids water, lava, and other hazardous surfaces. Cooldown: After using RTP, you must wait a set amount of time before using it again. The cooldown is configured by the server administrator. Admin Bypass: Admins may be exempt from the RTP cooldown, depending on server settings. -- Teleport Requests (TPA) TPA lets you request to teleport to another player's location. The other player must accept before the teleport occurs. Sending a R"
+    "content": "Teleportation Obsidian Essentials provides several ways for players to teleport around the world: random teleportation, player-to-player teleport requests, and public warps created by admins. -- Random Teleport (RTP) Random Teleport sends you to a random safe location in the world. After running this command, the system immediately begins searching for a safe landing spot and teleports you as soon as one is found. A \"Finding a safe location...\" message appears on your screen while it searches. The system avoids unsafe surfaces including water, lava, magma blocks, and cactus. It also avoids underground locations by default. Cooldown: After using RTP, you must wait before using it again (default: 5 minutes). The cooldown is configured by the server administrator. Admin Bypass: Admins are exempt from the RTP cooldown by default. -- Teleport Requests (TPA) TPA lets you request to teleport to another player's location. The other player must accept before the teleport occurs. Sending a Reque"
   },
   {
     "title": "basic-navigation",
@@ -466,14 +470,13 @@
       "First Setup",
       "Step 1 - Claim the Owner Role",
       "Step 2 - Open the Admin Panel",
-      "Step 3 - Review Feature Toggles",
-      "Step 4 - Configure General Settings",
+      "Step 3 - Configure Settings",
+      "Step 4 - Configure Feature Toggles",
       "Step 5 - Set Up Ranks (Recommended)",
-      "Step 6 - Set Up Spawn Protection (Optional)",
-      "Step 7 - Give Players the Community Panel",
+      "Step 6 - Give Players the Community Panel",
       "Setup Complete"
     ],
-    "content": "First Setup After installing Obsidian Essentials, follow this guide to complete your initial server configuration. This only needs to be done once. -- Step 1 - Claim the Owner Role The first thing you must do is designate yourself as the server owner. This gives you full access to every feature and permission in the add-on. 1. Make sure you are operator (OP) on the world or realm. 2. Join the world and open chat. 3. Run the following command exactly as written: 4. You will receive a confirmation message that you are now set as the server owner. This can only be done once. Only the first OP to run this command will be set as owner. Choose carefully. -- Step 2 - Open the Admin Panel Once you are the server owner, you have access to the Admin Panel - the central hub for all server configuration. To open the Admin Panel: 1. Type in chat: or the shorter alias: 2. A book item called Admin Panel will appear in your inventory. 3. Hold the book and right-click (or use it on mobile/console) to o"
+    "content": "First Setup After installing Obsidian Essentials, follow this guide to complete your initial configuration. This only needs to be done once. -- Step 1 - Claim the Owner Role The first thing you must do is designate yourself as the server owner. This gives you full access to every feature in the add-on. 1. Make sure you are operator (OP) on the world or realm. 2. Join the world and open chat. 3. Run the following command exactly as written: 4. You will receive a confirmation message that you are now set as the server owner. This can only be done once. Only the first person to run this command will be set as owner. -- Step 2 - Open the Admin Panel Once you are the server owner, you have access to the Admin Panel. 1. Type in chat: or the shorter alias: 2. A book item called Admin Panel will appear in your inventory. 3. Hold the book and right-click (or use it on mobile/console) to open the menu. -- Step 3 - Configure Settings Open the Admin Panel and go to Settings. The Settings menu is o"
   },
   {
     "title": "installation",
@@ -483,7 +486,7 @@
       "Installation",
       "Requirements",
       "Step 1 - Import the Pack",
-      "Step 2 - Apply the Pack to Your World",
+      "Step 2 - Apply the Packs to Your World",
       "For a Local World",
       "For a Realm",
       "Step 3 - Enable Experimental Features",
@@ -491,7 +494,7 @@
       "Troubleshooting Installation",
       "Next Steps"
     ],
-    "content": "Installation This guide walks you through installing Obsidian Essentials on your Minecraft Bedrock world or realm. -- Requirements Before installing, make sure your setup meets these requirements: Minecraft Bedrock Edition version 1.21.0 or higher A world or realm where you have operator (OP) permissions The Obsidian Essentials behavior pack file () -- Step 1 - Import the Pack 1. Locate the Obsidian Essentials file you downloaded. 2. Double-click the file. Minecraft should open automatically and begin importing the pack. 3. Wait for the import confirmation message to appear in Minecraft. 4. If the pack does not import automatically, open Minecraft first, then open the file from your file manager. -- Step 2 - Apply the Pack to Your World For a Local World 1. Open Minecraft and go to Play. 2. Find your world and click the Edit (pencil) icon. 3. Select Behavior Packs from the left menu. 4. Under My Packs, find Obsidian Essentials and click it. 5. Click Activate to add it to your world. 6."
+    "content": "Installation This guide walks you through installing Obsidian Essentials on your Minecraft Bedrock world or realm. -- Requirements Before installing, make sure your setup meets these requirements: Minecraft Bedrock Edition version 1.21.0 or higher A world or realm where you have operator (OP) permissions The Obsidian Essentials add-on file () -- Step 1 - Import the Pack 1. Locate the Obsidian Essentials file you downloaded. 2. Double-click the file. Minecraft should open automatically and begin importing both the Behavior Pack and Resource Pack. 3. Wait for the import confirmation message to appear in Minecraft. 4. If the packs do not import automatically, open Minecraft first, then open the file from your file manager. -- Step 2 - Apply the Packs to Your World The file contains both a Behavior Pack and a Resource Pack. Both must be activated on your world. For a Local World 1. Open Minecraft and go to Play. 2. Find your world and click the Edit (pencil) icon. 3. Select Resource Packs "
   },
   {
     "title": "faq",
@@ -507,7 +510,7 @@
       "Ranks",
       "Kits"
     ],
-    "content": "Frequently Asked Questions -- General What is Obsidian Essentials? Obsidian Essentials is a Minecraft Bedrock behavior pack add-on that adds server management tools, player features, an economy, land claims, ranks, and much more - all controlled from inside the game. What version of Minecraft does it require? Obsidian Essentials requires Minecraft Bedrock Edition version Any latest version. Does it work on Realms? Yes. Obsidian Essentials is designed to work on both local worlds and Minecraft Realms. Does the add-on require experimental features? Yes. The Beta APIs (Scripting APIs) experimental feature must be enabled in your world settings for the add-on to function. -- Setup How do I become the server owner? After installing the add-on and joining your world as an OP, run this command in chat: This designates you as the server owner with full access to all features. Can I change the owner later? No. The owner designation is permanent and cannot be reassigned once set. Only the origin"
+    "content": "Frequently Asked Questions -- General What is Obsidian Essentials? Obsidian Essentials is a Minecraft Bedrock behavior pack add-on that adds server management tools, player features, an economy, land claims, ranks, and much more - all controlled from inside the game. What version of Minecraft does it require? Obsidian Essentials requires Minecraft Bedrock Edition 1.21.0 or higher. Does it work on Realms? Yes. Obsidian Essentials is designed to work on both local worlds and Minecraft Realms. Does the add-on require experimental features? Yes. The Beta APIs (Scripting APIs) experimental feature must be enabled in your world settings for the add-on to function. -- Setup How do I become the server owner? After installing the add-on and joining your world as an OP, run this command in chat: This designates you as the server owner with full access to all features. Can I change the owner later? No. The owner designation is permanent and cannot be reassigned once set. Only the original owner o"
   },
   {
     "title": "troubleshooting",
@@ -541,6 +544,6 @@
       "Quick Start",
       "Version"
     ],
-    "content": "Obsidian Essentials Obsidian Essentials is a behavior pack add-on for Minecraft Bedrock Edition that gives server owners and administrators a complete suite of management tools — all controlled from inside the game through interactive menus and chat commands. No external apps. No config files. Everything is done in-game. -- What It Provides System Description Economy Server currency with player balances, direct payments, item withdrawals, and player-owned shops. Homes & Teleportation Save personal home locations, use random teleport, and send player-to-player TPA requests. Land Claims Protect builds by claiming chunks. Full-height protection with optional costs and TNT blocking. Ranks & Permissions Granular rank system with configurable permissions for every feature — homes, kits, warps, commands, and more. Moderation Tools Warn, kick, and ban players with full logging. Chat lock, report system, and action history. Kits & Codes Create item kits with cooldowns and rank-based access. Dis"
+    "content": "Obsidian Essentials Obsidian Essentials is an add-on for Minecraft Bedrock Edition — containing both a Behavior Pack and Resource Pack — that gives server owners and administrators a complete suite of management tools, all controlled from inside the game through interactive menus and chat commands. No external apps. No config files. Everything is done in-game. -- What It Provides System Description Economy Server currency with player balances, direct payments, item withdrawals, and player-owned shops. Homes & Teleportation Save personal home locations, use random teleport, and send player-to-player TPA requests. Land Claims Protect builds by claiming chunks. Full-height protection with optional costs and TNT blocking. Ranks & Permissions Granular rank system with configurable permissions for every feature - homes, kits, warps, commands, and more. Moderation Tools Warn, kick, and ban players with full logging. Chat lock, report system, and action history. Kits & Codes Create item kits w"
   }
 ]

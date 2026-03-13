@@ -1,5 +1,5 @@
 ---
-lastUpdated: 2026-03-13
+lastUpdated: 2026-03-13T12:00:00Z
 ---
 
 # Player Commands
@@ -115,24 +115,14 @@ These commands are available to all players, subject to rank restrictions config
 |---|---|
 | `!lastseen [Player]` | Shows when a player was last online |
 | `!code [CodeID]` | Redeems a redemption code |
+| `!xpget [Player]` | Checks a player's current XP level |
 
 **Examples:**
 ```
 !lastseen Steve
 !code welcome2024
+!xpget Steve
 ```
-
----
-
-## Slash Commands
-
-A small number of slash commands are also available directly from the Minecraft command bar:
-
-| Slash Command | Description |
-|---|---|
-| `/oe:clearchat` | Clears your chat |
-| `/oe:menu` | Opens the Community Panel |
-| `/oe:rank` | Manage player ranks (admin only) |
 
 ---
 
@@ -142,3 +132,4 @@ A small number of slash commands are also available directly from the Minecraft 
 - The `!` prefix is the default. Your server may use a different prefix.
 - Some commands in this list may be restricted to certain ranks on your server.
 - Type `!help` in-game to see the commands you personally have access to.
+- Most of these commands also have `/oe:` slash command equivalents. See [Slash Commands](slash-commands.md).

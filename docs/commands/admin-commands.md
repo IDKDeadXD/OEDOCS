@@ -1,5 +1,5 @@
 ---
-lastUpdated: 2026-03-13
+lastUpdated: 2026-03-13T12:00:00Z
 ---
 
 # Admin Commands
@@ -28,14 +28,12 @@ These commands are available to players with admin permissions or higher. They a
 | `!warn [Player] [Reason]` | Issues a formal warning to a player (logged) |
 | `!broadcast [Message]` | Sends a message to all players on the server |
 | `!command [Command]` | Runs a Minecraft command through the add-on |
-| `!xpget [Player]` | Checks a player's current XP level |
 
 **Examples:**
 ```
 !kick Steve Breaking the rules
 !warn Alex Spamming in chat
 !broadcast Server restarting in 5 minutes!
-!xpget Steve
 ```
 
 ---
@@ -133,13 +131,23 @@ Chat lock is controlled through the `/scriptevent realm:chatlock.disable` comman
 
 ## Slash Commands (Admin)
 
+Most admin commands have `/oe:` slash equivalents. Full list in [Slash Commands](slash-commands.md).
+
 | Slash Command | Description |
 |---|---|
-| `/oe:rank add [Player] [RankName]` | Adds a rank to a player |
-| `/oe:rank remove [Player] [RankName]` | Removes a rank from a player |
-| `/oe:rank list [Player]` | Lists a player's current ranks |
-| `/oe:rank priority [Player] [RankName] [Priority]` | Sets a rank's priority for a player |
-| `/oe:rank create [RankName]` | Creates a new rank |
+| `/oe:kick <player> <reason>` | Kicks a player |
+| `/oe:broadcast <message>` | Broadcasts to all players |
+| `/oe:warn <player> <reason>` | Warns a player |
+| `/oe:vanish` | Toggles vanish mode |
+| `/oe:admintoggle` | Toggles admin mode |
+| `/oe:lockchat` | Locks or unlocks the chat |
+| `/oe:clearchat` | Clears chat for all players |
+| `/oe:givemoney <player> <amount>` | Gives money to a player |
+| `/oe:takemoney <player> <amount>` | Takes money from a player |
+| `/oe:setmoney <player> <amount>` | Sets a player's balance |
+| `/oe:addlore <text>` | Adds lore to held item |
+| `/oe:removelore` | Removes lore from held item |
+| `/oe:coinflip` | Flips a coin |
 
 ---
 

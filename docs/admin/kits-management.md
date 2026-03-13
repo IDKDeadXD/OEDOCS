@@ -1,5 +1,5 @@
 ---
-lastUpdated: 2026-03-13
+lastUpdated: 2026-03-13T12:00:00Z
 ---
 
 # Kit Management
@@ -54,12 +54,6 @@ Kit access is controlled per rank through **Admin Panel > Ranks Editor**:
 - Set `kits.accessibleKits` to a list of kit names the rank can access.
 - Use `*` to grant access to all kits.
 - Set `kits.cooldownMultiplier` to modify the cooldown time for that rank (e.g., `0.5` = half the cooldown).
-
----
-
-## Enabling or Disabling the Kit System
-
-The kit system can be toggled from **Admin Panel > Feature Toggles**.
 
 ---
 

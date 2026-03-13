@@ -1,5 +1,5 @@
 ---
-lastUpdated: 2026-03-13
+lastUpdated: 2026-03-13T12:00:00Z
 ---
 
 # Item Banning
@@ -35,6 +35,6 @@ The system scans all online player inventories every second. If a player is foun
 
 ## Notes
 
-- Item banning applies to all players regardless of rank (unless they have bypass permissions).
-- Admins and owners are not immune to item banning by default - configure bypass permissions in the **Ranks Editor** if needed.
+- Players with the `admin` tag are exempt from item banning by default.
+- Regular players have banned items removed automatically without exception.
 - This system runs continuously in the background while the server is active.
