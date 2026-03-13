@@ -1,6 +1,6 @@
 ---
 title: "Kit Management"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:58:00Z
 ---
 
 # Kit Management
@@ -50,11 +50,10 @@ After creating a kit, configure it through the Admin Panel:
 
 ## Kit Access by Rank
 
-Kit access is controlled per rank through **Admin Panel > Ranks Editor**:
+Kit access is controlled per rank through **Admin Panel > Ranks Editor**. Under the Kit Permissions section for each rank:
 
-- Set `kits.accessibleKits` to a list of kit names the rank can access.
-- Use `*` to grant access to all kits.
-- Set `kits.cooldownMultiplier` to modify the cooldown time for that rank (e.g., `0.5` = half the cooldown).
+- **Accessible Kits** — which kits that rank can claim. Set to `*` to allow all kits.
+- **Cooldown Multiplier** — modifies the kit cooldown for that rank (e.g., `0.5` = half the cooldown).
 
 ---
 

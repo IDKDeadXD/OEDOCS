@@ -1,7 +1,7 @@
 ---
 title: Introduction
 description: Official documentation for Obsidian Essentials, a comprehensive server management add-on for Minecraft Bedrock Edition.
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:58:00Z
 ---
 
 # Obsidian Essentials
@@ -17,10 +17,10 @@ No external apps. No config files. Everything is done in-game.
 | System | Description |
 |---|---|
 | **Economy** | Server currency with player balances, direct payments, item withdrawals, and player-owned shops. |
-| **Homes & Teleportation** | Save personal home locations, use random teleport, and send player-to-player TPA requests. |
+| **Homes & Teleportation** | Save personal home locations and send player-to-player TPA requests. |
 | **Land Claims** | Protect builds by claiming chunks. Full-height protection with optional costs and TNT blocking. |
 | **Ranks & Permissions** | Granular rank system with configurable permissions for every feature - homes, kits, warps, commands, and more. |
-| **Moderation Tools** | Warn, kick, and ban players with full logging. Chat lock, report system, and action history. |
+| **Moderation Tools** | Warn, kick, and ban players with full logging. Report system and action history. |
 | **Kits & Codes** | Create item kits with cooldowns and rank-based access. Distribute redemption codes for events and rewards. |
 | **Warps & Floating Text** | Public warps, admin-only warps, and custom holograms placeable anywhere in the world. |
 
@@ -43,7 +43,7 @@ Everything in Obsidian Essentials is accessed through two in-game book items:
 Import the `.mcaddon` file and activate both the Behavior Pack and Resource Pack on your world. See the [Installation guide](/docs/getting-started/installation).
 
 **2. Claim the owner role**
-As an OP, run `/scriptevent realm:owner` in chat to designate yourself as the server owner.
+As an OP, run `/scriptevent realm:setup` in chat to designate yourself as the server owner.
 
 **3. Open the Admin Panel**
 Type `!adminpanel` to get the Admin Panel book and begin configuring your server.

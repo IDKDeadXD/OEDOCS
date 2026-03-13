@@ -1,6 +1,6 @@
 ---
 title: "Admin Commands"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:58:00Z
 ---
 
 # Admin Commands
@@ -57,7 +57,7 @@ Money management is handled through the **Admin Panel > Players** menu. Select a
 
 | Command | Description |
 |---|---|
-| `!addcode [ID] [Uses] [OnePerPlayer] [Command]` | Creates a new redemption code |
+| `!addcode [ID] [Uses] [true\|false] [Command]` | Creates a new redemption code — true = one use per player |
 | `!deletecode [ID]` | Deletes an existing redemption code |
 | `!listcodes` | Lists all active redemption codes |
 
@@ -124,12 +124,6 @@ Money management is handled through the **Admin Panel > Players** menu. Select a
 
 ---
 
-## Chat Lock
-
-Chat lock is controlled through the `/scriptevent realm:chatlock.disable` command if you need to force-disable it. Regular toggling is done from within the Admin Panel.
-
----
-
 ## Slash Commands (Admin)
 
 Most admin commands have `/oe:` slash equivalents. Full list in [Slash Commands](slash-commands.md).
@@ -141,7 +135,6 @@ Most admin commands have `/oe:` slash equivalents. Full list in [Slash Commands]
 | `/oe:warn <player> <reason>` | Warns a player |
 | `/oe:vanish` | Toggles vanish mode |
 | `/oe:admintoggle` | Toggles admin mode |
-| `/oe:lockchat` | Locks or unlocks the chat |
 | `/oe:clearchat` | Clears chat for all players |
 | `/oe:givemoney <player> <amount>` | Gives money to a player |
 | `/oe:takemoney <player> <amount>` | Takes money from a player |
@@ -159,15 +152,6 @@ These use the Minecraft `/scriptevent` system and require OP permissions.
 | Command | Description |
 |---|---|
 | `/scriptevent realm:setup` | Designates yourself as the server owner (OP only, one-time) |
-| `/scriptevent realm:dev.warps create:[Name]` | Creates a temporary dev warp at your location |
-| `/scriptevent realm:dev.warps tp:[Name]` | Teleports to a dev warp |
-| `/scriptevent realm:dev.warps delete:[Name]` | Deletes a dev warp |
-| `/scriptevent realm:dev.warps list` | Lists all dev warps |
-| `/scriptevent realm:dev.lastseen.edit [Player]:[Date]` | Manually sets a player's last-seen date |
-| `/scriptevent realm:chatlock.disable` | Forces chat lock off (emergency override) |
-
-> Dev warps created via scriptevent are temporary and will be lost when the server restarts.
-
 ---
 
 ## Notes

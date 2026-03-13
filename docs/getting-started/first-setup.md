@@ -1,6 +1,6 @@
 ---
 title: "First Setup"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:47:00Z
 ---
 
 # First Setup
@@ -17,7 +17,7 @@ The first thing you must do is designate yourself as the **server owner**. This 
 2. Join the world and open chat.
 3. Run the following command exactly as written:
    ```
-   /scriptevent realm:owner
+   /scriptevent realm:setup
    ```
 4. You will receive a confirmation message that you are now set as the server owner.
 

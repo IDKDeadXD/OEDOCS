@@ -1,11 +1,11 @@
 ---
 title: "Chat System"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:58:00Z
 ---
 
 # Chat System
 
-Obsidian Essentials enhances the default Minecraft chat with rank display, private messaging between players, chat lock for admins, and a personal chat clear option.
+Obsidian Essentials enhances the default Minecraft chat with rank display, private messaging between players, and a personal chat clear option.
 
 ---
 
@@ -65,20 +65,6 @@ You can also use the slash command:
 
 ---
 
-## Chat Lock
-
-Administrators can lock the chat to prevent regular players from sending messages. When chat is locked:
-
-- Regular players cannot send chat messages.
-- Admins can still speak freely.
-- Players will see a message explaining that chat is locked.
-
-Chat lock is managed by administrators and can be force-disabled with:
-```
-/scriptevent realm:chatlock.disable
-```
-
----
 
 ## Command Prefix
 

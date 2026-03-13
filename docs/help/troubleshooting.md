@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:58:00Z
 ---
 
 # Troubleshooting
@@ -17,7 +17,7 @@ Common issues with Obsidian Essentials and how to fix them.
 1. Confirm the behavior pack is **active** on your world (not just imported - it must be activated in the world's settings).
 2. Go to your world settings and confirm **Beta APIs** (Scripting APIs) is enabled under **Experiments**.
 3. Relaunch the world after making any changes to pack or experiment settings.
-4. Confirm you are OP on the world, then run `/scriptevent realm:owner` if setup has not been completed.
+4. Confirm you are OP on the world, then run `/scriptevent realm:setup` if setup has not been completed.
 
 ---
 
@@ -27,7 +27,7 @@ Common issues with Obsidian Essentials and how to fix them.
 
 **Solution:** An OP player must run:
 ```
-/scriptevent realm:owner
+/scriptevent realm:setup
 ```
 This only needs to be done once. Only the person who should be the permanent server owner should do this.
 
@@ -50,7 +50,7 @@ This only needs to be done once. Only the person who should be the permanent ser
 **Solutions:**
 - Confirm you have admin permissions or the `Admin` tag assigned to your account.
 - If the rank system is enabled, confirm your rank has `moderation.canUseAdminPanel` set to `true`.
-- If you are the server owner but cannot access the panel, check that `/scriptevent realm:owner` was completed successfully.
+- If you are the server owner but cannot access the panel, check that `/scriptevent realm:setup` was completed successfully.
 
 ---
 
@@ -91,16 +91,6 @@ This only needs to be done once. Only the person who should be the permanent ser
 
 ---
 
-## Chat Is Locked
-
-**Cause:** An administrator has locked the chat.
-
-**Solution:** Wait for an admin to unlock it. If you are an admin and chat is stuck locked, run:
-```
-/scriptevent realm:chatlock.disable
-```
-
----
 
 ## AFK Auto-Kick Is Kicking Staff
 

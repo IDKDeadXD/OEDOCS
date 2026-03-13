@@ -1,6 +1,6 @@
 ---
 title: "Admin Panel Overview"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:58:00Z
 ---
 
 # Admin Panel Overview
@@ -82,25 +82,3 @@ or:
 
 This saves your survival inventory and switches you to creative mode. Running the command again restores your inventory and returns you to survival.
 
----
-
-## Community Panel (Player Menu)
-
-The Community Panel is the standard player-facing menu. Players access it with `!book`. It contains the following options:
-
-| Button | Description |
-|---|---|
-| **Polls** | View and vote on server polls |
-| **Warps** | Access public warp points |
-| **Homes** | Manage personal home locations |
-| **Land Claims** | View and manage your land claims |
-| **TPA** | Send and manage teleport requests |
-| **Shops** | Browse and use player shops |
-| **Reports** | Submit a report about another player |
-| **Rules** | View server rules |
-| **Stats** | View your personal statistics |
-| **Credits/Info** | View add-on information |
-| **Settings** | Personal UI preferences |
-| **Admin Panel** | Shortcut to the Admin Panel (admins only) |
-
-Admins can enable or disable individual Community Panel buttons from **Admin Panel > Feature Toggles**.

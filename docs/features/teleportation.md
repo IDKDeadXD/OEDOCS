@@ -1,29 +1,11 @@
 ---
 title: "Teleportation"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:47:00Z
 ---
 
 # Teleportation
 
-Obsidian Essentials provides several ways for players to teleport around the world: random teleportation, player-to-player teleport requests, and public warps created by admins.
-
----
-
-## Random Teleport (RTP)
-
-Random Teleport sends you to a random safe location in the world.
-
-```
-!rtp
-```
-
-After running this command, the system immediately begins searching for a safe landing spot and teleports you as soon as one is found. A "Finding a safe location..." message appears on your screen while it searches.
-
-The system avoids unsafe surfaces including water, lava, magma blocks, and cactus. It also avoids underground locations by default.
-
-**Cooldown:** After using RTP, you must wait before using it again (default: 5 minutes). The cooldown is configured by the server administrator.
-
-**Admin Bypass:** Admins are exempt from the RTP cooldown by default.
+Obsidian Essentials provides several ways for players to teleport around the world: player-to-player teleport requests and public warps created by admins.
 
 ---
 
@@ -111,9 +93,5 @@ Administrators can configure teleportation in the **Admin Panel > Settings**:
 
 | Setting | What It Controls |
 |---|---|
-| **RTP Enabled** | Turn Random Teleport on or off |
-| **RTP Range** | Maximum distance from world center for RTP (default: 10,000) |
-| **RTP Cooldown** | Seconds players must wait between RTPs (default: 300) |
-| **Admin Bypass** | Admins skip RTP cooldown (default: on) |
 | **TPA Enabled** | Turn the TPA request system on or off |
 | **Teleport Delay** | Default countdown before home/TPA/warp teleports (default: 5s) |

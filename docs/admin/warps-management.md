@@ -1,6 +1,6 @@
 ---
 title: "Warp Management"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:58:00Z
 ---
 
 # Warp Management
@@ -61,18 +61,6 @@ From **Admin Panel > Admin Warps** you can:
 
 ---
 
-## Developer Warps (Temporary)
-
-Administrators can also create quick temporary warps using the `/scriptevent` system. These do **not** persist after a server restart and are intended for in-session navigation only.
-
-| Command | Description |
-|---|---|
-| `/scriptevent realm:dev.warps create:[Name]` | Create a dev warp at your current location |
-| `/scriptevent realm:dev.warps tp:[Name]` | Teleport to a dev warp |
-| `/scriptevent realm:dev.warps delete:[Name]` | Delete a dev warp |
-| `/scriptevent realm:dev.warps list` | List all current dev warps |
-
----
 
 ## Warp Permissions (Admin)
 

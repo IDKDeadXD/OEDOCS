@@ -1,11 +1,11 @@
 ---
 title: "Player Shops"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:47:00Z
 ---
 
 # Player Shops
 
-The Player Shops system allows players to set up their own buy and sell shops where other players can trade items using the server's currency.
+The Player Shops system lets players set up shops where other players can buy items using the server's currency.
 
 ---
 
@@ -16,24 +16,15 @@ Players can browse and interact with shops through the **Community Panel**:
 1. Type `!book` to open the Community Panel.
 2. Select **Shops**.
 3. A list of available player shops will appear.
-4. Select a shop to view its inventory and buy or sell items.
+4. Select a shop to view its inventory and buy items.
 
 ---
 
 ## Selling Items
 
-If you want to sell items from your inventory to a player shop:
+Player shops are **buy-only**. Other players can only purchase items from your shop — there is no way for players to sell items into a player shop.
 
-```
-!sell [Amount]
-```
-
-**Sell everything compatible in your inventory:**
-```
-!sell all
-```
-
-The money earned from selling will be added to your balance automatically.
+To sell items for money, use the `!sell` command, which works with server shops configured by an admin.
 
 ---
 

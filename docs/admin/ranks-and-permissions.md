@@ -1,28 +1,11 @@
 ---
 title: "Ranks & Permissions"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:58:00Z
 ---
 
 # Ranks & Permissions
 
 Obsidian Essentials includes a rank and permission system. Ranks control what players can do, from how many homes they can set to whether they can use admin commands. This page explains how to manage ranks and assign them to players.
-
----
-
-## Default Ranks
-
-The add-on comes with several pre-configured ranks:
-
-| Rank | Description |
-|---|---|
-| **Default** | All players start here. Basic access to player features. |
-| **Cosmetic** | Slightly enhanced player with access to color codes in chat. |
-| **VIP** | Enhanced player with more homes, kit access, warp access, and shop discounts. |
-| **VIP+** | Further enhanced player with even more homes and extended AFK bypass. |
-| **Helper** | Staff rank with some moderation capabilities. |
-| **Moderator** | Full moderation access including kick, ban, and warnings. |
-| **Admin** | Full access to all admin commands and the Admin Panel. |
-| **Owner** | All permissions. Set only once via `/scriptevent realm:setup`. |
 
 ---
 

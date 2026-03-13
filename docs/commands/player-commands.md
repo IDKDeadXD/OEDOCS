@@ -1,6 +1,6 @@
 ---
 title: "Player Commands"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:47:00Z
 ---
 
 # Player Commands
@@ -27,8 +27,8 @@ These commands are available to all players, subject to rank restrictions config
 | `!balance` | `!bal` | Shows your current money balance |
 | `!pay [Player] [Amount]` | - | Transfers money to another player |
 | `!withdraw [Amount]` | `!wd` | Converts money into a physical money item |
-| `!sell [Amount]` | - | Sells items from your hand |
-| `!sell all` | - | Sells all applicable items in your inventory |
+| `!sell [Amount]` | - | Sells items from your hand to a server shop |
+| `!sell all` | - | Sells all applicable items in your inventory to a server shop |
 
 **Examples:**
 ```
@@ -116,13 +116,11 @@ These commands are available to all players, subject to rank restrictions config
 |---|---|
 | `!lastseen [Player]` | Shows when a player was last online |
 | `!code [CodeID]` | Redeems a redemption code |
-| `!xpget [Player]` | Checks a player's current XP level |
 
 **Examples:**
 ```
 !lastseen Steve
 !code welcome2024
-!xpget Steve
 ```
 
 ---

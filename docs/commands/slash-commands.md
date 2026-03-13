@@ -1,6 +1,6 @@
 ---
 title: "Slash Commands"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:58:00Z
 ---
 
 # Slash Commands
@@ -48,7 +48,6 @@ Available to administrators (Admin permission level):
 | `/oe:warn <player> <reason>` | Issues a warning to a player |
 | `/oe:vanish` | Toggles vanish mode |
 | `/oe:admintoggle` | Toggles admin mode (saves inventory, switches to creative) |
-| `/oe:lockchat` | Locks or unlocks the chat |
 | `/oe:clearchat` | Clears chat for all players |
 | `/oe:coinflip` | Flips a coin and announces the result |
 | `/oe:givemoney <player> <amount>` | Gives money to a player |

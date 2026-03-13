@@ -1,6 +1,6 @@
 ---
 title: "Redemption Codes"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:47:00Z
 ---
 
 # Redemption Codes
@@ -32,7 +32,7 @@ If the code has already been used up, or if you have already redeemed it (on ser
 
 Administrators can create redemption codes with this command:
 ```
-!addcode [CodeID] [MaxUses] [OnePerPlayer] [Command]
+!addcode [CodeID] [MaxUses] [true|false] [Command]
 ```
 
 **Parameters:**

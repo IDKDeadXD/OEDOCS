@@ -1,6 +1,6 @@
 ---
 title: "Homes"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T6:39:00Z
 ---
 
 # Homes
@@ -80,12 +80,6 @@ This permanently removes that home. It cannot be recovered.
 Each player has a maximum number of homes they can save. The default limit is determined by the server administrator. Players with higher ranks may have a larger home limit.
 
 If you try to add a home when you are at your limit, you will receive an error message. Delete an existing home first to make room.
-
----
-
-## Homes Across Dimensions
-
-Homes remember which dimension they were saved in. If you save a home in the Nether, using `!home [name]` will teleport you to the Nether. Make sure you have a way to survive the destination before teleporting.
 
 ---
 

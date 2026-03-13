@@ -1,6 +1,6 @@
 ---
 title: "Economy & Money System"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:47:00Z
 ---
 
 # Economy & Money System
@@ -60,19 +60,19 @@ A money item will appear in your inventory. When another player picks it up, the
 
 ## Selling Items
 
-If your server has a sell system configured:
+`!sell` works with **server shops only** — these are admin-configured shops with fixed prices per item. It does not work with player-owned shops.
 
 **Sell a specific quantity from your hand:**
 ```
 !sell [Amount]
 ```
 
-**Sell everything in your inventory:**
+**Sell everything applicable in your inventory:**
 ```
 !sell all
 ```
 
-Prices are set by the server administrator through the Player Shops system.
+Prices are set by the server administrator.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Vanish Mode"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:58:00Z
 ---
 
 # Vanish Mode
@@ -50,6 +50,5 @@ Vanish behavior can be configured in **Admin Panel > Settings**:
 
 ## Notes
 
-- Only players with admin permissions or higher can use vanish.
 - While vanished, you can still interact with the world in spectator mode (flying, phasing through blocks).
 - Other admins online may still be able to see that you are in spectator mode depending on their client settings.

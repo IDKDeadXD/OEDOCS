@@ -1,6 +1,6 @@
 ---
 title: "Moderation Tools"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:58:00Z
 ---
 
 # Moderation Tools
@@ -72,19 +72,6 @@ The ban system blocks a player from rejoining the server.
 
 ---
 
-## Chat Lock
-
-When chat is locked, regular players cannot send messages. Admins can still speak freely.
-
-Chat lock is controlled by administrators from within the Admin Panel or by using the emergency disable command:
-
-```
-/scriptevent realm:chatlock.disable
-```
-
-This forces chat lock off regardless of its current state.
-
----
 
 ## Clearing Chat
 

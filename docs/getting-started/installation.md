@@ -1,6 +1,6 @@
 ---
 title: "Installation"
-lastUpdated: 2026-03-13T12:00:00Z
+lastUpdated: 2026-03-13T18:47:00Z
 ---
 
 # Installation
@@ -71,7 +71,7 @@ Once in the world:
 1. Make sure you have **operator status** (OP).
 2. Run the owner setup command. Nothing will work until this is done:
    ```
-   /scriptevent realm:owner
+   /scriptevent realm:setup
    ```
 3. Once setup is complete, type the following in chat to confirm the add-on is running:
    ```
