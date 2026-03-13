@@ -93,7 +93,7 @@ The buttons you can show or hide are:
 | Credits/Info | Add-on credits and info |
 | Settings | Player personal settings |
 
-The **Admin Panel** button also appears in the Community Panel but is only visible to players with the `Admin`, `admin`, or `dev` tag.
+The **Admin Panel** button also appears in the Community Panel but is only visible to players with the `Admin` or `admin` tag.
 
 ---
 
