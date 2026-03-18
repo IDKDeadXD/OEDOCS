@@ -1,6 +1,6 @@
 ---
 title: "First Setup"
-lastUpdated: 2026-03-13T18:47:00Z
+lastUpdated: 2026-03-13T19:05:00Z
 ---
 
 # First Setup
