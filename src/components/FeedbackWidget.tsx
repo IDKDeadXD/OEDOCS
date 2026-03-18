@@ -13,6 +13,7 @@ const EDGE   = 20;
 export default function FeedbackWidget() {
   const [open, setOpen]       = useState(false);
   const [settled, setSettled] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [pos, setPos] = useState({ centerX: 0, centerY: 0, closedX: 0, closedY: 0, cardW: CARD_W });
 
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function FeedbackWidget() {
         closedX: vw  - EDGE - BTN_W,
         closedY: vh - EDGE - BTN_H,
       });
+      setMounted(true);
     }
     calc();
     window.addEventListener('resize', calc);
@@ -69,6 +71,8 @@ export default function FeedbackWidget() {
     cursor: open ? 'default' : 'pointer',
     transition: 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.2), width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.2), height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.2), border-radius 0.1s ease, box-shadow 0.3s ease',
   };
+
+  if (!mounted) return null;
 
   return (
     <>

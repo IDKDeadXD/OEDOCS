@@ -1,6 +1,6 @@
 ---
 title: "Server Settings"
-lastUpdated: 2026-03-13T19:05:00Z
+lastUpdated: 2026-03-18T13:39:00Z
 ---
 
 # Server Settings
