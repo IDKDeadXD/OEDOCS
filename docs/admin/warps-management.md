@@ -20,13 +20,18 @@ Public warps are teleport destinations that any player can access through the Co
 3. Go to **Public Warps**.
 4. Select the option to create a new warp.
 5. Enter a name for the warp.
-6. The warp is saved at your current location.
+6. Set access options (see below).
+7. The warp is saved at your current location.
+
+**Access options set at creation (or when editing):**
+- **Allow Anyone to Use** — when on, all players can use the warp. When off, only players with the required rank can.
+- **Required Rank** — if Allow Anyone is off, select which rank is needed to use this warp.
 
 ### Managing Public Warps
 
 From **Admin Panel > Public Warps** you can:
 - View all existing public warps
-- Edit warp names or locations
+- Edit warp names, locations, or access settings
 - Delete warps
 
 ### Player Access
@@ -35,8 +40,6 @@ Players access public warps through the **Community Panel**:
 1. Type `!book` to open the Community Panel.
 2. Select **Warps**.
 3. Choose a warp from the list.
-
-Access to specific warps can be restricted per rank through **Admin Panel > Ranks Editor**. See the Warp Permissions section below.
 
 ---
 
@@ -58,16 +61,3 @@ From **Admin Panel > Admin Warps** you can:
 - View all admin warps
 - Teleport to any admin warp
 - Delete admin warps
-
----
-
-
-## Warp Permissions (Admin)
-
-Per-rank warp access is configured in **Admin Panel > Ranks Editor**:
-
-| Permission | What It Controls |
-|---|---|
-| **Can Use Warps** | Whether the rank can access public warps |
-| **Accessible Warps** | Which specific warps the rank can use (use `*` for all) |
-| **Teleport Delay** | Countdown before the warp teleport occurs |
