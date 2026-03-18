@@ -59,7 +59,6 @@ Open the **Admin Panel** and go to **Settings**. The Settings menu is organized 
 
 **Communication**
 - **Chat Configuration**: Change the command prefix (default: `!`) and toggle a content filter.
-- **Chat Ranks**: Enable or disable rank prefixes shown next to player names in chat. When disabled, no rank tags are displayed and rank-gated chat commands become available to all players.
 - **Emoji Settings**: Configure emoji behavior in chat.
 
 **Security & Moderation**
