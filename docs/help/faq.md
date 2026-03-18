@@ -52,7 +52,7 @@ Players type `!book` in chat to receive the Community Panel. Admins can also ena
 Money is managed by administrators. They add money to player balances through the Admin Panel. Players can also earn money by selling items or receiving payments from other players.
 
 **Can players lose money?**
-Yes, if the death money drop feature is enabled, a set amount is dropped on death. Players can also spend money in shops or send it to others via `!pay`.
+Yes. If PvP Money is enabled, a set amount is taken from a player when they are killed by another player and given to the killer. Players can also spend money in shops or send it to others via `!pay`.
 
 **What happens if I withdraw money and drop the item?**
 The money item works like any other Minecraft item - if it is not picked up, it will eventually despawn.

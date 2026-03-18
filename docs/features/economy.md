@@ -76,9 +76,9 @@ Prices are set by the server administrator.
 
 ---
 
-## Death Money (Optional)
+## PvP Money (Optional)
 
-If enabled by the server administrator, a set amount of money is dropped when a player dies.
+If enabled, when a player kills another player, a set amount of money is taken from the killed player and given to the killer. The amount is configured by the server administrator.
 
 ---
 
@@ -100,5 +100,5 @@ Administrators configure the economy system through **Admin Panel > Settings**:
 | Setting | What It Controls |
 |---|---|
 | **Money System Name** | Internal name of the currency scoreboard |
-| **Kill/Death Money Drop** | Enable or disable money dropping on death |
-| **Death Drop Amount** | How much money drops when a player dies |
+| **PvP Money** | Enable or disable money transfer on player kill |
+| **PvP Money Amount** | How much is taken from the killed player and given to the killer |

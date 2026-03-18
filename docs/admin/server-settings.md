@@ -55,8 +55,8 @@ The Settings menu in the Admin Panel is where you configure server-wide options 
 | Setting | What It Controls |
 |---|---|
 | **Money System Name** | The internal name of the currency scoreboard |
-| **Kill/Death Money Drop** | Whether money is dropped when a player dies |
-| **Death Drop Amount** | How much money is dropped on death |
+| **PvP Money** | Whether money is transferred on player kill |
+| **PvP Money Amount** | How much is taken from the killed player and given to the killer |
 
 ---
 

@@ -36,7 +36,7 @@ Players access public warps through the **Community Panel**:
 2. Select **Warps**.
 3. Choose a warp from the list.
 
-Access to specific warps can be restricted per rank through **Admin Panel > Ranks Editor** using the `warps.accessibleWarps` permission.
+Access to specific warps can be restricted per rank through **Admin Panel > Ranks Editor**. See the Warp Permissions section below.
 
 ---
 

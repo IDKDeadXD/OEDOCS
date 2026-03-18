@@ -59,7 +59,7 @@ Open the **Admin Panel** and go to **Settings**. The Settings menu is organized 
 
 **Communication**
 - **Chat Configuration**: Change the command prefix (default: `!`) and toggle a content filter.
-- **Chat Ranks**: Enable or disable rank tags appearing in chat.
+- **Chat Ranks**: Enable or disable rank prefixes shown next to player names in chat. When disabled, no rank tags are displayed and rank-gated chat commands become available to all players.
 - **Emoji Settings**: Configure emoji behavior in chat.
 
 **Security & Moderation**
@@ -92,8 +92,6 @@ The buttons you can show or hide are:
 | Stats | Player statistics |
 | Credits/Info | Add-on credits and info |
 | Settings | Player personal settings |
-
-The **Admin Panel** button also appears in the Community Panel but is only visible to players with the `Admin` or `admin` tag.
 
 ---
 
