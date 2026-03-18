@@ -47,11 +47,9 @@ Your cooldown time may be shorter than other players if your rank includes a coo
 
 ## Kit Access by Rank
 
-Not every kit is available to every player. The server administrator controls which ranks can access which kits. For example:
+Not every kit is available to every player. Each kit has its own list of allowed ranks, configured per kit in **Admin Panel > Kits Config**. This is not set in the rank's settings — it is set on the kit itself.
 
-- A **starter** kit might be available to all players.
-- A **vip** kit might only be accessible to VIP and above.
-- A **staff** kit might only be accessible to Helper and above.
+For example, a **starter** kit might allow all ranks, while a **pvp** kit might only allow VIP and above.
 
 If a kit does not appear in your `!kits` list, you do not have access to it with your current rank.
 

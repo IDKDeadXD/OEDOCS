@@ -99,11 +99,11 @@ The **Admin Panel** button also appears in the Community Panel but is only visib
 
 ## Step 5 - Set Up Ranks (Recommended)
 
-Obsidian Essentials includes a rank and permission system. To manage ranks:
+Obsidian Essentials includes a rank and permission system. To create and manage ranks:
 
 1. Open the **Admin Panel**.
 2. Go to **Ranks Editor**.
-3. Review existing ranks, edit permissions, or create new custom ranks.
+3. Create ranks, set their permissions, colors, and priority.
 
 To assign a rank to a player:
 

@@ -32,7 +32,7 @@ If the code has already been used up, or if you have already redeemed it (on ser
 
 Administrators can create redemption codes with this command:
 ```
-!addcode [CodeID] [MaxUses] [true|false] [Command]
+!addcode [CodeID] [MaxUses] [OncePerPlayer?] [Command]
 ```
 
 **Parameters:**

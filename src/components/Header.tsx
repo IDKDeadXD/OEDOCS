@@ -17,48 +17,145 @@ interface SearchEntry {
 
 interface SearchResult {
   entry: SearchEntry;
-  /** Which field matched and the matched snippet */
   matchContext: string;
   score: number;
 }
 
-function scoreEntry(entry: SearchEntry, terms: string[]): SearchResult | null {
-  const titleLower = entry.title.toLowerCase();
-  const descLower = entry.description.toLowerCase();
-  const headingsText = entry.headings.join(' ').toLowerCase();
-  const contentLower = entry.content.toLowerCase();
+// Words too common to be useful for matching
+const STOP_WORDS = new Set([
+  'how','to','the','a','an','is','it','in','on','at','for','of','and','or',
+  'with','do','does','can','i','my','you','your','what','where','when','why',
+  'who','will','be','are','was','has','have','get','use','make','by','if','as',
+  'so','but','about','from','this','that','these','those','do','set','up','out',
+]);
 
+// Expand common shorthand and synonyms into additional search terms
+const ALIASES: Record<string, string[]> = {
+  money:      ['economy','balance','currency','coins','pay','withdraw'],
+  cash:       ['economy','balance','money','coins'],
+  earn:       ['economy','money','pay'],
+  pay:        ['economy','balance','money'],
+  buy:        ['shops','economy'],
+  sell:       ['shops','economy'],
+  shop:       ['shops'],
+  store:      ['shops'],
+  ban:        ['moderation','banned','banning'],
+  kick:       ['moderation'],
+  warn:       ['moderation'],
+  mute:       ['moderation'],
+  report:     ['moderation'],
+  tp:         ['teleportation','tpa'],
+  teleport:   ['teleportation','tpa'],
+  tpa:        ['teleportation'],
+  home:       ['homes'],
+  homes:      ['homes'],
+  rank:       ['ranks','permissions'],
+  ranks:      ['ranks','permissions'],
+  perm:       ['permissions','ranks'],
+  permission: ['ranks','permissions'],
+  warp:       ['warps'],
+  warps:      ['warps'],
+  kit:        ['kits'],
+  kits:       ['kits'],
+  claim:      ['land claims','land-claims'],
+  protect:    ['land-claims','spawn-protection','spawn protection'],
+  spawn:      ['spawn-protection'],
+  lag:        ['lag-zapper','lag zapper'],
+  stat:       ['player-stats','statistics','stats'],
+  stats:      ['player-stats','statistics'],
+  afk:        ['afk','away'],
+  away:       ['afk'],
+  code:       ['redemption-codes','codes'],
+  redeem:     ['redemption-codes','codes'],
+  hologram:   ['floating-text','floating text'],
+  holo:       ['floating-text','floating text'],
+  float:      ['floating-text'],
+  vanish:     ['vanish','invisible'],
+  invisible:  ['vanish'],
+  mob:        ['mob-management','mobs'],
+  install:    ['installation'],
+  setup:      ['first-setup','installation'],
+  admin:      ['admin-panel','admin panel'],
+  command:    ['commands'],
+  cmd:        ['commands'],
+  chat:       ['chat'],
+  seen:       ['last-seen'],
+  lastseen:   ['last-seen'],
+  announce:   ['chat','broadcast'],
+};
+
+function expandTerms(terms: string[]): string[] {
+  const expanded = new Set(terms);
+  for (const t of terms) {
+    const aliases = ALIASES[t];
+    if (aliases) aliases.forEach(a => expanded.add(a));
+  }
+  return Array.from(expanded);
+}
+
+function scoreEntry(entry: SearchEntry, rawTerms: string[], phrase: string): SearchResult | null {
+  const titleLower    = entry.title.toLowerCase();
+  const descLower     = entry.description.toLowerCase();
+  const headingsLower = entry.headings.join(' \n ').toLowerCase();
+  const contentLower  = entry.content.toLowerCase();
+
+  const terms = expandTerms(rawTerms);
   let score = 0;
   let matchContext = '';
 
-  for (const term of terms) {
-    if (titleLower.includes(term)) { score += 10; }
-    if (descLower.includes(term)) { score += 5; }
-    if (headingsText.includes(term)) { score += 4; }
-    if (contentLower.includes(term)) { score += 1; }
+  // Full phrase match — biggest signal
+  if (phrase.length > 2) {
+    if (titleLower.includes(phrase))    score += 120;
+    if (headingsLower.includes(phrase)) score += 60;
+    if (contentLower.includes(phrase))  score += 30;
   }
 
+  // Per-term scoring with prefix fallback
+  for (const term of terms) {
+    // Exact substring match
+    const inTitle    = titleLower.includes(term);
+    const inDesc     = descLower.includes(term);
+    const inHeadings = headingsLower.includes(term);
+    const inContent  = contentLower.includes(term);
+
+    if (inTitle)    score += 20;
+    if (inDesc)     score += 8;
+    if (inHeadings) score += 6;
+    if (inContent)  score += 2;
+
+    // Prefix match (e.g. "tele" → "teleportation") — only if no exact match found
+    if (!inTitle && titleLower.split(/\s+/).some(w => w.startsWith(term) && w !== term))    score += 10;
+    if (!inHeadings && headingsLower.split(/\s+/).some(w => w.startsWith(term) && w !== term)) score += 4;
+    if (!inContent && contentLower.split(/\s+/).some(w => w.startsWith(term) && w !== term))  score += 1;
+  }
+
+  // Must have matched something meaningful
   if (score === 0) return null;
 
-  // Build a context snippet: find the first term in content and show surrounding text
-  for (const term of terms) {
-    const idx = contentLower.indexOf(term);
-    if (idx !== -1) {
-      const start = Math.max(0, idx - 40);
-      const end = Math.min(entry.content.length, idx + term.length + 80);
-      matchContext = (start > 0 ? '…' : '') + entry.content.slice(start, end) + (end < entry.content.length ? '…' : '');
-      break;
-    }
-    const hIdx = headingsText.indexOf(term);
-    if (hIdx !== -1) {
-      // find which heading
-      for (const h of entry.headings) {
-        if (h.toLowerCase().includes(term)) {
-          matchContext = h;
-          break;
-        }
+  // Require at least one raw term (not just aliases) to match somewhere
+  const hasRawMatch = rawTerms.some(t =>
+    titleLower.includes(t) || headingsLower.includes(t) || contentLower.includes(t) ||
+    titleLower.split(/\s+/).some(w => w.startsWith(t)) ||
+    headingsLower.split(/\s+/).some(w => w.startsWith(t)) ||
+    contentLower.split(/\s+/).some(w => w.startsWith(t))
+  );
+  if (!hasRawMatch) return null;
+
+  // Build context snippet
+  const searchIn = [
+    { text: entry.content, lower: contentLower },
+    { text: entry.headings.join(' — '), lower: headingsLower },
+  ];
+
+  outer: for (const { text, lower } of searchIn) {
+    for (const term of [phrase, ...rawTerms, ...terms]) {
+      const idx = lower.indexOf(term);
+      if (idx !== -1) {
+        const start = Math.max(0, idx - 35);
+        const end   = Math.min(text.length, idx + term.length + 90);
+        matchContext = (start > 0 ? '…' : '') + text.slice(start, end) + (end < text.length ? '…' : '');
+        break outer;
       }
-      break;
     }
   }
 
@@ -66,16 +163,17 @@ function scoreEntry(entry: SearchEntry, terms: string[]): SearchResult | null {
 }
 
 function search(query: string): SearchResult[] {
-  const terms = query
-    .toLowerCase()
-    .split(/\s+/)
-    .filter((t) => t.length >= 2);
+  const phrase = query.toLowerCase().trim();
+  const allTerms = phrase.split(/\s+/).filter(t => t.length >= 2);
+  const terms = allTerms.filter(t => !STOP_WORDS.has(t));
 
-  if (terms.length === 0) return [];
+  // Fall back to all terms if everything was a stop word
+  const effectiveTerms = terms.length > 0 ? terms : allTerms.filter(t => t.length >= 2);
+  if (effectiveTerms.length === 0) return [];
 
   const results: SearchResult[] = [];
   for (const entry of searchIndex as SearchEntry[]) {
-    const result = scoreEntry(entry, terms);
+    const result = scoreEntry(entry, effectiveTerms, phrase);
     if (result) results.push(result);
   }
 
@@ -137,7 +235,8 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 h-14 border-b border-border bg-bg/95 backdrop-blur-sm flex items-center px-4 gap-3 sm:px-6 sm:gap-6">
+      <header className="fixed top-0 left-0 right-0 z-50 h-14 border-b border-white/[0.06] bg-bg/80 backdrop-blur-xl flex items-center px-4 sm:px-6 gap-4">
+
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileNavOpen(true)}
@@ -154,30 +253,57 @@ export default function Header() {
           <Image
             src="/logo.jpeg"
             alt="Obsidian Essentials"
-            width={28}
-            height={28}
+            width={26}
+            height={26}
             className="rounded-md"
           />
-          <span className="font-semibold text-text-primary text-sm hidden sm:block">
+          <span className="font-semibold text-text-primary text-sm hidden sm:block tracking-tight">
             Obsidian Essentials
           </span>
         </Link>
 
-        <div className="flex-1" />
+        {/* Right links */}
+        <div className="hidden sm:flex items-center gap-1 shrink-0 order-last">
+          <a
+            href="https://oe.deadstudios.xyz/changelog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm text-text-muted hover:text-text-primary hover:bg-white/[0.05] transition-all duration-150"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Download
+          </a>
+          <a
+            href="https://discord.gg/UcjHTY8fAg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm text-text-muted hover:text-text-primary hover:bg-white/[0.05] transition-all duration-150"
+          >
+            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 127.14 96.36">
+              <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+            </svg>
+            Discord
+          </a>
+        </div>
 
-        {/* Search trigger */}
-        <button
-          onClick={openSearch}
-          className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-border bg-bg-secondary text-text-secondary text-sm hover:border-purple/50 hover:text-text-primary transition-colors"
-        >
-          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-          <span className="hidden sm:block">Search docs...</span>
-          <kbd className="hidden sm:flex items-center gap-0.5 px-1.5 py-0.5 text-xs border border-border rounded bg-bg-tertiary text-text-muted">
-            Ctrl K
-          </kbd>
-        </button>
+        {/* Search — centered */}
+        <div className="flex-1 flex justify-center px-4">
+          <button
+            onClick={openSearch}
+            className="flex items-center gap-2.5 w-full max-w-sm px-3.5 py-2 rounded-lg border border-white/[0.08] bg-white/[0.04] text-text-muted text-sm hover:bg-white/[0.07] hover:border-white/[0.12] hover:text-text-secondary transition-all duration-150"
+          >
+            <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <span className="flex-1 text-left hidden sm:block">Search docs...</span>
+            <kbd className="hidden sm:flex items-center gap-0.5 px-1.5 py-0.5 text-xs border border-white/[0.08] rounded bg-white/[0.04] text-text-muted font-sans">
+              Ctrl K
+            </kbd>
+          </button>
+        </div>
+
       </header>
 
       {/* Search modal */}
@@ -202,7 +328,8 @@ export default function Header() {
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Search documentation..."
-                className="flex-1 bg-transparent text-text-primary placeholder-text-muted text-sm outline-none"
+                className="flex-1 bg-transparent text-text-primary placeholder-text-muted outline-none"
+                style={{ fontSize: '16px' }}
               />
               <kbd
                 className="px-1.5 py-0.5 text-xs border border-border rounded bg-bg-tertiary text-text-muted cursor-pointer"

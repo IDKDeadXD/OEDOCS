@@ -36,10 +36,10 @@ export default async function DocPage({ params }: PageProps) {
   return (
     <div className="flex">
       {/* Doc content */}
-      <article className="flex-1 min-w-0 px-6 lg:px-10 xl:px-16 py-10 max-w-4xl">
+      <article className="flex-1 min-w-0 px-4 sm:px-6 lg:px-10 xl:px-16 py-8 sm:py-10 max-w-4xl">
         {/* Page header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-text-primary mb-2">{doc.title}</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-text-primary mb-2">{doc.title}</h1>
           {doc.description && (
             <p className="text-lg text-text-secondary">{doc.description}</p>
           )}

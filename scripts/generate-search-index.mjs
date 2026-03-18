@@ -3,19 +3,16 @@ import { join, relative, dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const docsDir = resolve(__dirname, '../docs');
-const outputDir = resolve(__dirname, '../src/generated');
+const docsDir    = resolve(__dirname, '../docs');
+const outputDir  = resolve(__dirname, '../src/generated');
 const outputFile = join(outputDir, 'search-index.json');
 
 function getAllMdFiles(dir) {
   const results = [];
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     const fullPath = join(dir, entry.name);
-    if (entry.isDirectory()) {
-      results.push(...getAllMdFiles(fullPath));
-    } else if (entry.name.endsWith('.md')) {
-      results.push(fullPath);
-    }
+    if (entry.isDirectory()) results.push(...getAllMdFiles(fullPath));
+    else if (entry.name.endsWith('.md')) results.push(fullPath);
   }
   return results;
 }
@@ -24,13 +21,13 @@ function parseFrontmatter(content) {
   if (!content.startsWith('---')) return { data: {}, body: content };
   const end = content.indexOf('---', 3);
   if (end === -1) return { data: {}, body: content };
-  const fm = content.slice(3, end).trim();
+  const fm   = content.slice(3, end).trim();
   const body = content.slice(end + 3).trim();
   const data = {};
   for (const line of fm.split('\n')) {
     const colon = line.indexOf(':');
     if (colon === -1) continue;
-    const key = line.slice(0, colon).trim();
+    const key   = line.slice(0, colon).trim();
     const value = line.slice(colon + 1).trim().replace(/^["']|["']$/g, '');
     data[key] = value;
   }
@@ -39,15 +36,16 @@ function parseFrontmatter(content) {
 
 function stripMarkdown(text) {
   return text
-    .replace(/```[\s\S]*?```/g, '') // code blocks
-    .replace(/`[^`]*`/g, '')        // inline code
-    .replace(/!\[.*?\]\(.*?\)/g, '') // images
+    .replace(/```[\s\S]*?```/g, ' ')         // code blocks
+    .replace(/`[^`]*`/g, ' ')                // inline code
+    .replace(/!\[.*?\]\(.*?\)/g, ' ')        // images
     .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1') // links → text
-    .replace(/^#{1,6}\s+/gm, '')    // headings
-    .replace(/[*_~]{1,3}([^*_~]+)[*_~]{1,3}/g, '$1') // bold/italic
-    .replace(/^\s*[-*+>|]\s*/gm, '') // list/blockquote/table markers
-    .replace(/\|/g, ' ')            // table pipes
-    .replace(/---+/g, '')           // hr
+    .replace(/^#{1,6}\s+/gm, ' ')           // headings marker
+    .replace(/[*_~]{1,3}([^*_~\n]+)[*_~]{1,3}/g, '$1') // bold/italic
+    .replace(/^\s*[-*+>]\s*/gm, ' ')         // list/blockquote markers
+    .replace(/\|[-: ]+\|[-| :]+/g, ' ')      // table separator rows
+    .replace(/\|/g, ' ')                     // table pipes
+    .replace(/---+/g, ' ')                   // hr
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -70,22 +68,22 @@ const files = getAllMdFiles(docsDir);
 const index = [];
 
 for (const filePath of files) {
-  const raw = readFileSync(filePath, 'utf-8');
-  const { data, body } = parseFrontmatter(raw);
-  const plainText = stripMarkdown(body);
-  const headings = extractHeadings(body);
-  const href = fileToSlug(filePath);
+  const raw             = readFileSync(filePath, 'utf-8');
+  const { data, body }  = parseFrontmatter(raw);
+  const plainText       = stripMarkdown(body);
+  const headings        = extractHeadings(body);
+  const href            = fileToSlug(filePath);
 
   index.push({
-    title: data.title || href.split('/').pop() || '',
+    title:       data.title       || href.split('/').pop() || '',
     description: data.description || '',
     href,
     headings,
-    // Keep a reasonable excerpt for relevance — first 500 chars
-    content: plainText.slice(0, 1000),
+    // Full content — no arbitrary truncation so every page is fully searchable
+    content: plainText,
   });
 }
 
 mkdirSync(outputDir, { recursive: true });
-writeFileSync(outputFile, JSON.stringify(index, null, 2));
+writeFileSync(outputFile, JSON.stringify(index));
 console.log(`Generated search-index.json with ${index.length} entries.`);

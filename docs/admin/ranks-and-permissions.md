@@ -77,13 +77,6 @@ When creating or editing a rank, you configure a set of permissions that control
 | **Teleport Delay** | Countdown before TPA teleport |
 | **Cooldown** | Seconds between TPA requests |
 
-### Kit Permissions
-
-| Permission | What It Controls |
-|---|---|
-| **Accessible Kits** | Which kits this rank can claim (use `*` for all) |
-| **Cooldown Multiplier** | Modifies kit cooldown (e.g., 0.5 = half cooldown) |
-
 ### Warp Permissions
 
 | Permission | What It Controls |
@@ -127,6 +120,32 @@ When creating or editing a rank, you configure a set of permissions that control
 |---|---|
 | **Can Use Shops** | Whether this rank can buy/sell in shops |
 | **Discount Multiplier** | Price modifier for shops (e.g., 0.9 = 10% discount) |
+
+---
+
+## Assigning Ranks via Tag Command
+
+Ranks in Obsidian Essentials are stored as player tags. This means you can assign or remove ranks using Minecraft's built-in `/tag` command, which is useful for bulk setup, command blocks, or automation.
+
+The tag name must match the rank name exactly as it appears in the Ranks Editor.
+
+**Add a rank:**
+```
+/tag [PlayerName] add [RankName]
+```
+
+**Remove a rank:**
+```
+/tag [PlayerName] remove [RankName]
+```
+
+**Example:**
+```
+/tag Steve add VIP
+/tag Steve remove Default
+```
+
+This has the same effect as assigning the rank through the Admin Panel and takes effect immediately.
 
 ---
 

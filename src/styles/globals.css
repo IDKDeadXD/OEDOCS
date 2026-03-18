@@ -51,6 +51,18 @@
   }
 }
 
+/* Mobile: tables and code blocks scroll horizontally instead of overflowing */
+.prose table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.prose pre {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* highlight.js theme override */
 .hljs {
   background: #111111 !important;

@@ -19,10 +19,11 @@ The Mob Settings system lets administrators completely prevent specific mob type
 
 ---
 
-## Use Cases
+## Mob Cash Rewards
 
-- Stopping mobs that cause excessive lag
-- Blocking mobs that conflict with your server's rules or gameplay
+Each mob type can be configured to give players money when killed. This is set per mob in the **Mob Settings** menu. When a player kills a mob that has a cash reward configured, the amount is added to their balance automatically.
+
+This works alongside the economy system. Make sure the economy is active on your server for mob cash rewards to function.
 
 ---
 

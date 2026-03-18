@@ -36,35 +36,23 @@ The `.mcaddon` contains a linked Behavior Pack and Resource Pack. Activating the
 
 1. Open Minecraft and go to **Play**.
 2. Find your world and click the **Edit** (pencil) icon.
-3. Select **Behavior Packs** from the left menu. Under **My Packs**, find **Obsidian Essentials** and click **Activate**. The Resource Pack will be activated automatically.
-4. Return to the world settings and click **Play** to launch.
+3. Select **Behavior Packs** from the left menu. Under **My Packs**, find **Obsidian Essentials** and click **Activate**. The Resource Pack will activate automatically.
+4. Still in the world settings, scroll down to **Experiments** and make sure **Beta APIs** (also listed as **Scripting APIs** on some versions) is enabled. The add-on will not work without this.
+5. Click **Play** to launch the world.
 
-> **Important:** If prompted about experimental features being required, click **Activate Experiments** to continue. The add-on will not function without this.
+> If Minecraft prompts you to confirm enabling experiments when activating the pack, click **Activate Experiments**. If it does not prompt you, check the Experiments section manually before launching.
 
 ### For a Realm
 
 1. Open Minecraft and go to **Realms**.
 2. Select your realm and click the **Edit** (pencil) icon.
 3. Go to **Behavior Packs**, find **Obsidian Essentials** under **My Packs**, and click **Activate**. The Resource Pack will activate automatically.
-4. Confirm any prompts about experimental gameplay.
+4. Confirm that **Beta APIs** is enabled under the **Experiments** section of the realm settings.
 5. The changes will apply the next time players join the realm.
 
 ---
 
-## Step 3 - Enable Experimental Features
-
-Obsidian Essentials requires certain experimental features to function. When applying the pack, Minecraft may ask you to confirm enabling experiments. You must accept this.
-
-If the experiments were not enabled automatically:
-
-1. Go to your world settings (Edit World).
-2. Scroll down to **Experiments**.
-3. Enable **Beta APIs** (also called **Scripting APIs** depending on your version).
-4. Save and relaunch the world.
-
----
-
-## Step 4 - Verify Installation
+## Step 3 - Verify Installation
 
 Once in the world:
 
