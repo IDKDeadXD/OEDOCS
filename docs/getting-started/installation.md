@@ -45,10 +45,16 @@ The `.mcaddon` contains a linked Behavior Pack and Resource Pack. Activating the
 ### For a Realm
 
 1. Open Minecraft and go to **Realms**.
-2. Select your realm and click the **Edit** (pencil) icon.
-3. Go to **Behavior Packs**, find **Obsidian Essentials** under **My Packs**, and click **Activate**. The Resource Pack will activate automatically.
-4. Confirm that **Beta APIs** is enabled under the **Experiments** section of the realm settings.
-5. The changes will apply the next time players join the realm.
+2. Select your realm and click **Settings**.
+3. Select the world you are using for the realm and click **Edit World**.
+4. Go to **Behavior Packs**, find **Obsidian Essentials** under **My Packs**, and click **Activate**. The Resource Pack will activate automatically.
+5. Scroll all the way down and click **Download World**.
+6. Go back to the Worlds menu where the downloaded world was saved to, open that world's settings, and turn on **Beta API** in the **Experiments** tab.
+7. Then repeat steps 1, 2, 3, and 5 — but instead of clicking **Download World**, click **Replace World** and select the world you downloaded and modified in step 6.
+8. The changes will apply the next time players join the realm.
+
+> [!DISCLAIMER]
+> **DISCLAIMER:** We have had instances where players needed to make entirely new worlds with the experimental setting **Beta API** turned on to get realms to even recognize Beta API being enabled.
 
 ---
 

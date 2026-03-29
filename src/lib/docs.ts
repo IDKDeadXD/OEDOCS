@@ -35,6 +35,26 @@ function slugToFilePath(slug: string[]): string | null {
   return null;
 }
 
+const ICON_WARNING = `<svg class="doc-callout-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`;
+
+const ICON_DISCLAIMER = `<svg class="doc-callout-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`;
+
+function processCallouts(html: string): string {
+  // [!WARNING] → yellow callout
+  let out = html.replace(
+    /<blockquote>\n<p>\[!WARNING\]([\s\S]*?)<\/blockquote>/g,
+    (_, inner) =>
+      `<div class="doc-callout doc-callout-warning"><span class="doc-callout-icon">${ICON_WARNING}</span><div class="doc-callout-content"><p>${inner.trimStart()}</div></div>`
+  );
+  // [!DISCLAIMER] → dark callout
+  out = out.replace(
+    /<blockquote>\n<p>\[!DISCLAIMER\]([\s\S]*?)<\/blockquote>/g,
+    (_, inner) =>
+      `<div class="doc-callout doc-callout-disclaimer"><span class="doc-callout-icon">${ICON_DISCLAIMER}</span><div class="doc-callout-content"><p>${inner.trimStart()}</div></div>`
+  );
+  return out;
+}
+
 function extractToc(html: string): TocEntry[] {
   const entries: TocEntry[] = [];
   const headingRegex = /<h([23])[^>]*id="([^"]*)"[^>]*>(.*?)<\/h[23]>/gi;
@@ -82,7 +102,7 @@ export async function getDocBySlug(slug: string[]): Promise<DocData | null> {
     .use(rehypeStringify)
     .process(content);
 
-  const contentHtml = String(result);
+  const contentHtml = processCallouts(String(result));
   const toc = extractToc(contentHtml);
 
   // Read lastUpdated from frontmatter (source of truth — works on Vercel)
